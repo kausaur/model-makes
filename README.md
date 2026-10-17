@@ -1,6 +1,6 @@
-# 🧊 Model Makes
+# 🧊 Node 'n' Nozzle
 
-A static e-commerce website for showcasing and selling 3D-printed models. No backend needed — runs entirely on HTML, CSS, and vanilla JavaScript.
+A static e-commerce website for showcasing and selling handcrafted models, figurines, collectibles, and decor. No backend needed — runs entirely on HTML, CSS, and vanilla JavaScript.
 
 ## Quick Start
 

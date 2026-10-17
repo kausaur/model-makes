@@ -145,7 +145,7 @@ export function generateWhatsAppOrderUrl() {
 
   if (cart.length === 0) return '#';
 
-  let msg = `Hi Model Makes! 🧊\nI'd like to place an order for the following 3D-printed model${count > 1 ? 's' : ''}:\n\n`;
+  let msg = `Hi Node 'n' Nozzle! 🧊\nI'd like to place an order for the following model${count > 1 ? 's' : ''}:\n\n`;
 
   cart.forEach((item, index) => {
     msg += `${index + 1}. *${item.name}* × ${item.qty} (${formatCurrency(item.price * item.qty)})\n`;

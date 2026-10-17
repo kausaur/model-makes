@@ -1153,7 +1153,7 @@ function copyPowerShellScript() {
     if (p.video && !videos.includes(p.video)) videos.push(p.video);
   });
 
-  const psScript = `# PowerShell helper: Create required asset folders for Model Makes
+  const psScript = `# PowerShell helper: Create required asset folders for Node 'n' Nozzle
 New-Item -ItemType Directory -Force -Path "public/assets/images", "public/assets/videos"
 
 Write-Host "Target asset folders verified." -ForegroundColor Cyan

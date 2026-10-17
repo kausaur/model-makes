@@ -48,7 +48,7 @@ function renderActiveMedia() {
   } else {
     const img = document.createElement('img');
     img.src = item.src;
-    img.alt = item.alt || 'Model Makes 3D Product Media';
+    img.alt = item.alt || "Node 'n' Nozzle Product Media";
     img.className = 'lightbox-media';
     mediaBox.appendChild(img);
   }
