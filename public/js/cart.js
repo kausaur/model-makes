@@ -145,7 +145,7 @@ export function generateWhatsAppOrderUrl() {
 
   if (cart.length === 0) return '#';
 
-  let msg = `Hi Node 'n' Nozzle! 🧊\nI'd like to place an order for the following model${count > 1 ? 's' : ''}:\n\n`;
+  let msg = `Hi Node 'n' Nozzle! ✨\nI'd like to place an order for the following model${count > 1 ? 's' : ''}:\n\n`;
 
   cart.forEach((item, index) => {
     msg += `${index + 1}. *${item.name}* × ${item.qty} (${formatCurrency(item.price * item.qty)})\n`;
@@ -201,7 +201,7 @@ export function renderCartDrawer() {
     .map(
       (item) => `
       <div class="line-item" data-id="${item.id}">
-        <img src="${item.image}" alt="${item.name}" class="line-thumb" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\'><rect fill=\\'%231A1A2E\\' width=\\'60\\' height=\\'60\\'/><text x=\\'30\\' y=\\'35\\' font-size=\\'20\\' text-anchor=\\'middle\\' fill=\\'%2300D4FF\\'>🧊</text></svg>'">
+        <img src="${item.image}" alt="${item.name}" class="line-thumb" onerror="this.src='assets/images/logo-icon.svg'">
         <div class="line-info">
           <h4 class="line-title">${item.name}</h4>
           <span class="line-price">${formatCurrency(item.price)}</span>

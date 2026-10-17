@@ -36,9 +36,10 @@
   --radius-full: 9999px;
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Bricolage Grotesque', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-subheading: 'Outfit', sans-serif;
+  --font-mono: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ----------------- Reset & Base ----------------- */
@@ -115,8 +116,19 @@ html, body {
 }
 
 .brand-logo .cube-icon {
-  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.brand-logo .cube-icon img,
+.brand-logo .cube-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .brand-tag {

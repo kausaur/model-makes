@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A182E"/>
+      <stop offset="100%" stop-color="#0E0D18"/>
+    </linearGradient>
+    
+    <!-- Cyan Node Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38E1FF"/>
+      <stop offset="100%" stop-color="#00A3FF"/>
+    </linearGradient>
+
+    <!-- Warm Artisan Nozzle Gradient -->
+    <linearGradient id="nozzleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC837"/>
+      <stop offset="50%" stop-color="#FF8008"/>
+      <stop offset="100%" stop-color="#FF4E50"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Canvas -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="#38E1FF" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Subtle ambient inner glow -->
+  <circle cx="32" cy="32" r="22" fill="#FF8008" opacity="0.08"/>
+
+  <!-- ================= NOZZLE & NODES CRAFT EMBLEM ================= -->
+  <g id="craft-emblem">
+    <!-- Faceted Hexagonal Nozzle Body -->
+    <!-- Top threaded collar / heat block -->
+    <path d="M22 22 L42 22 L45 28 L19 28 Z" fill="url(#nozzleGrad)"/>
+    
+    <!-- Main Tapered Nozzle Cone -->
+    <path d="M19 28 L45 28 L37 43 L27 43 Z" fill="url(#nozzleGrad)"/>
+    
+    <!-- Precision Extrusion Tip -->
+    <path d="M27 43 L37 43 L35 49 L29 49 Z" fill="#FFC837"/>
+
+    <!-- Center Facet Highlight (Adds 3D crafted metallic reflection) -->
+    <polygon points="32,22 36,28 34,43 32,49 30,43 28,28" fill="#FFFFFF" opacity="0.28"/>
+
+    <!-- ================= THE NODES (Precision Craft Coordinates) ================= -->
+    <!-- Connecting node vectors / filament path -->
+    <path d="M14 16 L32 10 L50 16" stroke="url(#cyanGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M32 10 L32 22" stroke="url(#cyanGrad)" stroke-width="2" stroke-dasharray="2 2"/>
+    <path d="M14 16 L22 22" stroke="url(#cyanGrad)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 16 L42 22" stroke="url(#cyanGrad)" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Precision Node Circles -->
+    <!-- Center Top Node -->
+    <circle cx="32" cy="10" r="4" fill="url(#cyanGrad)" filter="url(#softGlow)"/>
+    <circle cx="32" cy="10" r="1.5" fill="#FFFFFF"/>
+
+    <!-- Left Wing Node -->
+    <circle cx="14" cy="16" r="3.5" fill="url(#cyanGrad)"/>
+    <circle cx="14" cy="16" r="1.2" fill="#FFFFFF"/>
+
+    <!-- Right Wing Node -->
+    <circle cx="50" cy="16" r="3.5" fill="url(#cyanGrad)"/>
+    <circle cx="50" cy="16" r="1.2" fill="#FFFFFF"/>
+
+    <!-- Bottom Molten Bead (Deposited Craft Product) -->
+    <circle cx="32" cy="54" r="3" fill="#FFC837" filter="url(#softGlow)"/>
+    <circle cx="32" cy="54" r="1.2" fill="#FFFFFF"/>
+  </g>
+</svg>

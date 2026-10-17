@@ -71,7 +71,7 @@ http.createServer((req, res) => {
     fs.createReadStream(filePath).pipe(res);
   });
 }).listen(PORT, () => {
-  console.log(`\n  🧊 Node 'n' Nozzle local server running:`);
+  console.log(`\n  ✨ Node 'n' Nozzle local server running:`);
   console.log(`     👉 Storefront:  http://localhost:${PORT}`);
   console.log(`     👉 Admin Panel: http://localhost:${PORT}/admin/admin.html\n`);
 });
