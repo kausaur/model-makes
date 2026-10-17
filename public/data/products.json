@@ -8,8 +8,7 @@
     "mrp": 1500,
     "currency": "INR",
     "images": [
-      "assets/images/dragon-figurine-1.svg",
-      "assets/images/dragon-figurine-2.svg"
+      "assets/images/dragon-figurine-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -32,8 +31,7 @@
     "mrp": null,
     "currency": "INR",
     "images": [
-      "assets/images/articulated-octopus-1.svg",
-      "assets/images/articulated-octopus-2.svg"
+      "assets/images/articulated-octopus-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -56,8 +54,7 @@
     "mrp": 600,
     "currency": "INR",
     "images": [
-      "assets/images/phone-stand-1.svg",
-      "assets/images/phone-stand-2.svg"
+      "assets/images/phone-stand-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -80,8 +77,7 @@
     "mrp": null,
     "currency": "INR",
     "images": [
-      "assets/images/cable-organizer-1.svg",
-      "assets/images/cable-organizer-2.svg"
+      "assets/images/cable-organizer-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -104,8 +100,7 @@
     "mrp": 1200,
     "currency": "INR",
     "images": [
-      "assets/images/geometric-planter-1.svg",
-      "assets/images/geometric-planter-2.svg"
+      "assets/images/geometric-planter-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -128,8 +123,7 @@
     "mrp": null,
     "currency": "INR",
     "images": [
-      "assets/images/moon-lamp-shell-1.svg",
-      "assets/images/moon-lamp-shell-2.svg"
+      "assets/images/moon-lamp-shell-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -152,8 +146,7 @@
     "mrp": 4500,
     "currency": "INR",
     "images": [
-      "assets/images/iron-man-helmet-1.svg",
-      "assets/images/iron-man-helmet-2.svg"
+      "assets/images/iron-man-helmet-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -176,8 +169,7 @@
     "mrp": null,
     "currency": "INR",
     "images": [
-      "assets/images/mandalorian-bust-1.svg",
-      "assets/images/mandalorian-bust-2.svg"
+      "assets/images/mandalorian-bust-1.jpg"
     ],
     "video": null,
     "gif": null,

@@ -30,8 +30,7 @@ const DEFAULT_SAMPLE_CATALOG = [
     "mrp": 1500,
     "currency": "INR",
     "images": [
-      "assets/images/dragon-figurine-1.svg",
-      "assets/images/dragon-figurine-2.svg"
+      "assets/images/dragon-figurine-1.jpg"
     ],
     "video": "",
     "gif": "",
@@ -54,8 +53,7 @@ const DEFAULT_SAMPLE_CATALOG = [
     "mrp": null,
     "currency": "INR",
     "images": [
-      "assets/images/articulated-octopus-1.svg",
-      "assets/images/articulated-octopus-2.svg"
+      "assets/images/articulated-octopus-1.jpg"
     ],
     "video": "",
     "gif": "",
@@ -78,8 +76,7 @@ const DEFAULT_SAMPLE_CATALOG = [
     "mrp": 600,
     "currency": "INR",
     "images": [
-      "assets/images/phone-stand-1.svg",
-      "assets/images/phone-stand-2.svg"
+      "assets/images/phone-stand-1.jpg"
     ],
     "video": "",
     "gif": "",
@@ -102,8 +99,7 @@ const DEFAULT_SAMPLE_CATALOG = [
     "mrp": 4500,
     "currency": "INR",
     "images": [
-      "assets/images/iron-man-helmet-1.svg",
-      "assets/images/iron-man-helmet-2.svg"
+      "assets/images/iron-man-helmet-1.jpg"
     ],
     "video": "",
     "gif": "",
