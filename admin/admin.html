@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Makes — Local Admin Panel</title>
+  
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="admin-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-logo">
+          <span class="cube-icon">🧊</span>
+          <span>MODEL MAKES</span>
+        </div>
+        <span class="brand-tag">Admin Panel</span>
+      </div>
+
+      <!-- Center Tabs -->
+      <nav class="header-nav" aria-label="Main Navigation">
+        <button id="nav-tab-products" class="nav-tab-btn active" data-tab="products">
+          <span>📦</span> Products
+        </button>
+        <button id="nav-tab-manifest" class="nav-tab-btn" data-tab="manifest">
+          <span>📋</span> Media Manifest
+        </button>
+        <button id="nav-tab-data" class="nav-tab-btn" data-tab="data">
+          <span>💾</span> Data & Export
+        </button>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <div class="status-pill" id="storage-status-pill" title="Synchronized with local browser storage">
+          <span class="status-dot synced" id="sync-dot"></span>
+          <span id="product-count-badge">0 Products</span>
+        </div>
+        <button id="btn-quick-import" class="btn btn-secondary btn-sm" title="Import products.json">
+          <span>📥</span> Import
+        </button>
+        <button id="btn-quick-export" class="btn btn-cta btn-sm" title="Export updated products.json">
+          <span>📤</span> Export JSON
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="app-container">
+
+    <!-- Information / CORS Notice Banner -->
+    <section id="notice-banner" class="notice-banner">
+      <div class="notice-content">
+        <span class="notice-icon">⚡</span>
+        <div>
+          <strong>Local Mode Active:</strong> You can manage, add, edit, or delete 3D-printed catalog items. Click <em>Export JSON</em> when finished and replace <code>public/data/products.json</code>.
+        </div>
+      </div>
+      <div class="notice-actions">
+        <button id="btn-dismiss-notice" class="btn btn-secondary btn-sm">Got it</button>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 1: PRODUCTS ==================== -->
+    <section id="view-products" class="tab-view active">
+      
+      <!-- Stats Row -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon-wrap">📦</div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-total-products">0</div>
+            <div class="stat-label">Total Catalog Models</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap" style="color: var(--success);">🟢</div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-instock-products">0</div>
+            <div class="stat-label">In Stock Models</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap" style="color: #FBBF24;">⭐</div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-featured-products">0</div>
+            <div class="stat-label">Featured Models</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap" style="color: var(--accent);">🖼️</div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-media-assets">0</div>
+            <div class="stat-label">Referenced Media Files</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action & Filter Toolbar -->
+      <div class="toolbar-card">
+        <div class="toolbar-filters">
+          <!-- Search Input -->
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="search" id="input-search" class="search-input" placeholder="Search by name, ID slug, tag, material...">
+          </div>
+
+          <!-- Category Filter -->
+          <select id="select-filter-category" class="filter-select">
+            <option value="all">All Categories</option>
+            <option value="figurines">Figurines</option>
+            <option value="gadgets">Gadgets</option>
+            <option value="home-decor">Home Decor</option>
+            <option value="cosplay">Cosplay</option>
+          </select>
+
+          <!-- Stock Filter -->
+          <select id="select-filter-stock" class="filter-select">
+            <option value="all">All Stock Status</option>
+            <option value="inStock">In Stock Only</option>
+            <option value="outOfStock">Out of Stock Only</option>
+          </select>
+
+          <!-- Sort Order -->
+          <select id="select-sort" class="filter-select">
+            <option value="newest">Recently Added</option>
+            <option value="updated">Recently Updated</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+
+        <button id="btn-open-add-modal" class="btn btn-accent">
+          <span>➕</span> Add New Product
+        </button>
+      </div>
+
+      <!-- Product List / Table -->
+      <div class="table-wrapper">
+        <table class="products-table" id="products-table">
+          <thead>
+            <tr>
+              <th style="width: 70px;">Thumbnail</th>
+              <th>Product Details</th>
+              <th>Category</th>
+              <th>Price (INR)</th>
+              <th>Specs</th>
+              <th>Stock</th>
+              <th>Tags</th>
+              <th style="text-align: right; width: 140px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body">
+            <!-- Dynamically populated via admin.js -->
+          </tbody>
+        </table>
+
+        <!-- Empty State Container -->
+        <div id="table-empty-state" class="empty-state" style="display: none;">
+          <div class="empty-icon">🧊</div>
+          <div class="empty-title">No products found</div>
+          <div class="empty-desc">Try clearing your search filters or click "Add New Product" to create your first 3D-printed model item.</div>
+          <button id="btn-empty-add" class="btn btn-accent btn-sm">➕ Add Product</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: MEDIA MANIFEST ==================== -->
+    <section id="view-manifest" class="tab-view" style="display: none;">
+      <div class="manifest-container">
+        
+        <div class="manifest-header-card">
+          <div class="manifest-title-wrap">
+            <h2>Media Manifest & Asset Checklist</h2>
+            <p>Lists all media files referenced in <code>products.json</code>. Place these files in your <code>public/assets/images/</code> or <code>public/assets/videos/</code> folders.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button id="btn-copy-manifest-list" class="btn btn-secondary btn-sm">
+              <span>📋</span> Copy Path List
+            </button>
+            <button id="btn-copy-powershell-cmd" class="btn btn-primary btn-sm">
+              <span>💻</span> Copy PowerShell Setup Script
+            </button>
+          </div>
+        </div>
+
+        <div id="manifest-summary-stats" style="color: var(--text-secondary); font-size: 0.85rem;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div class="manifest-grid" id="manifest-grid">
+          <!-- Dynamically populated via admin.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: DATA MANAGEMENT ==================== -->
+    <section id="view-data" class="tab-view" style="display: none;">
+      <div class="data-mgmt-grid">
+
+        <!-- Import Section -->
+        <div class="data-card">
+          <h2 class="data-card-title">
+            <span>📥</span> Import Products JSON
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 0.82rem;">
+            Upload your existing <code>products.json</code> file, paste raw JSON, or attempt to load directly from the local dev server.
+          </p>
+
+          <!-- File Upload Zone -->
+          <div class="file-drop-zone" id="json-drop-zone">
+            <div class="file-drop-icon">📄</div>
+            <div class="file-drop-text"><strong>Click to browse</strong> or drag & drop <code>products.json</code> here</div>
+            <div class="file-drop-hint">Supports JSON files up to 10MB</div>
+            <input type="file" id="input-json-file" accept=".json,application/json" style="display: none;">
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem;">
+            <label for="textarea-json-import" style="font-weight: 600; font-size: 0.78rem; color: var(--text-secondary);">Or Paste Raw JSON:</label>
+            <button id="btn-try-fetch-server" class="btn btn-secondary btn-sm" title="Try fetching ../public/data/products.json">
+              <span>🌐</span> Fetch from Server
+            </button>
+          </div>
+
+          <textarea id="textarea-json-import" class="json-textarea" placeholder="Paste your products JSON array here... [ { &quot;id&quot;: ... } ]"></textarea>
+
+          <div style="display: flex; gap: 0.75rem; justify-content: flex-end; align-items: center;">
+            <label class="toggle-wrapper" style="font-size: 0.78rem; color: var(--text-secondary);">
+              <input type="checkbox" id="check-import-merge" style="display:none;">
+              <span class="toggle-switch"></span>
+              Merge with existing products
+            </label>
+            <button id="btn-parse-json-import" class="btn btn-accent">Import Data</button>
+          </div>
+        </div>
+
+        <!-- Export & Catalog Tools Section -->
+        <div class="data-card">
+          <h2 class="data-card-title">
+            <span>📤</span> Export & Catalog Tools
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 0.82rem;">
+            Download your modified products database or copy raw JSON into your clipboard to paste into <code>public/data/products.json</code>.
+          </p>
+
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <button id="btn-download-json" class="btn btn-cta">
+              <span>💾</span> Download products.json
+            </button>
+            <button id="btn-copy-raw-json" class="btn btn-secondary">
+              <span>📋</span> Copy to Clipboard
+            </button>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <span style="font-weight: 600; font-size: 0.78rem; color: var(--text-secondary);">Live JSON Output Preview:</span>
+              <span id="json-size-indicator" style="font-size: 0.72rem; color: var(--text-muted);">0 bytes</span>
+            </div>
+            <textarea id="textarea-json-preview" class="json-textarea" readonly style="min-height: 180px;"></textarea>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid var(--border);">
+
+          <!-- Reset / Sample Data -->
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <h3 style="font-size: 0.85rem; color: var(--text-secondary);">Quick Catalog Presets:</h3>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <button id="btn-load-sample-data" class="btn btn-secondary btn-sm">
+                <span>🪄</span> Reset to Sample Catalog
+              </button>
+              <button id="btn-clear-all-data" class="btn btn-danger btn-sm">
+                <span>🗑️</span> Clear All Products
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== ADD / EDIT PRODUCT MODAL ==================== -->
+  <div id="product-modal-backdrop" class="modal-backdrop">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 id="modal-headline" class="modal-title">
+          <span id="modal-title-icon">➕</span>
+          <span id="modal-title-text">Add New Product</span>
+        </h2>
+        <button id="btn-modal-close" class="btn-close" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Modal Body (Form) -->
+      <form id="product-form" class="modal-body" novalidate>
+        
+        <!-- Section 1: Basic Information -->
+        <div class="form-section">
+          <h3 class="section-title"><span>🏷️</span> Basic Information</h3>
+          
+          <div class="form-grid-2">
+            <!-- Product Name -->
+            <div class="form-group">
+              <label class="form-label" for="form-name">
+                <span>Product Name <span class="required">*</span></span>
+              </label>
+              <input type="text" id="form-name" class="form-input" placeholder="e.g. Dragon Figurine" required>
+              <div id="error-name" class="form-hint" style="color: var(--danger); display: none;">Name is required</div>
+            </div>
+
+            <!-- Slug / ID -->
+            <div class="form-group">
+              <label class="form-label" for="form-slug">
+                <span>Slug / ID <span class="required">*</span></span>
+                <span class="form-hint">Used in URLs & assets</span>
+              </label>
+              <div class="slug-input-wrap">
+                <input type="text" id="form-slug" class="form-input" placeholder="e.g. dragon-figurine" required>
+                <button type="button" id="btn-slug-lock" class="btn-slug-lock" title="Toggle slug auto-generation">🔒</button>
+              </div>
+              <div id="error-slug" class="form-hint" style="color: var(--danger); display: none;">Valid unique slug is required</div>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <!-- Category -->
+            <div class="form-group">
+              <label class="form-label" for="form-category">
+                <span>Category <span class="required">*</span></span>
+              </label>
+              <select id="form-category" class="form-select" required>
+                <option value="figurines">Figurines</option>
+                <option value="gadgets">Gadgets</option>
+                <option value="home-decor">Home Decor</option>
+                <option value="cosplay">Cosplay</option>
+              </select>
+            </div>
+
+            <!-- Tags Selection -->
+            <div class="form-group">
+              <label class="form-label">
+                <span>Tags</span>
+                <span class="form-hint">Badges & highlights</span>
+              </label>
+              <div class="tags-selector-wrap" id="tags-selector-container">
+                <span class="tag-select-pill" data-tag="new">✨ new</span>
+                <span class="tag-select-pill" data-tag="bestseller">🔥 bestseller</span>
+                <span class="tag-select-pill" data-tag="limited">⚡ limited</span>
+                <span class="tag-select-pill" data-tag="custom">🛠️ custom</span>
+                <div class="custom-tag-input-wrap">
+                  <input type="text" id="input-custom-tag" class="form-input custom-tag-input" placeholder="+ custom tag">
+                  <button type="button" id="btn-add-custom-tag" class="btn btn-secondary btn-sm" style="padding: 0.35rem 0.55rem;">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label" for="form-description">
+              <span>Description</span>
+              <span class="form-hint">Maker notes, finish details & dimensions</span>
+            </label>
+            <textarea id="form-description" class="form-textarea" placeholder="Detailed dragon model, 15cm tall. PLA+ with hand-painted finish."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 2: Pricing & Inventory -->
+        <div class="form-section">
+          <h3 class="section-title"><span>💰</span> Pricing & Inventory</h3>
+          
+          <div class="form-grid-4">
+            <!-- Price -->
+            <div class="form-group">
+              <label class="form-label" for="form-price">
+                <span>Price (₹) <span class="required">*</span></span>
+              </label>
+              <input type="number" id="form-price" class="form-input" min="0" step="1" placeholder="1200" required>
+              <div id="error-price" class="form-hint" style="color: var(--danger); display: none;">Must be a positive number</div>
+            </div>
+
+            <!-- MRP -->
+            <div class="form-group">
+              <label class="form-label" for="form-mrp">
+                <span>MRP (₹ Strikethrough)</span>
+              </label>
+              <input type="number" id="form-mrp" class="form-input" min="0" step="1" placeholder="1500">
+            </div>
+
+            <!-- In Stock Toggle -->
+            <div class="form-group">
+              <label class="form-label">
+                <span>Inventory Status</span>
+              </label>
+              <label class="toggle-wrapper">
+                <input type="checkbox" id="form-instock" checked style="display:none;">
+                <span class="toggle-switch"></span>
+                <span id="label-instock-status" style="font-weight: 500;">In Stock</span>
+              </label>
+            </div>
+
+            <!-- Featured Toggle -->
+            <div class="form-group">
+              <label class="form-label">
+                <span>Featured Showcase</span>
+              </label>
+              <label class="toggle-wrapper">
+                <input type="checkbox" id="form-featured" style="display:none;">
+                <span class="toggle-switch"></span>
+                <span id="label-featured-status" style="font-weight: 500;">Homepage Star</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Technical 3D-Print Specifications -->
+        <div class="form-section">
+          <h3 class="section-title"><span>⚙️</span> 3D-Print Specifications</h3>
+          
+          <div class="form-grid-4">
+            <!-- Material -->
+            <div class="form-group">
+              <label class="form-label" for="form-material">
+                <span>Material</span>
+              </label>
+              <input type="text" id="form-material" class="form-input" list="material-suggestions" placeholder="PLA+">
+              <datalist id="material-suggestions">
+                <option value="PLA">
+                <option value="PLA+">
+                <option value="Silk PLA">
+                <option value="PETG">
+                <option value="ABS">
+                <option value="TPU">
+                <option value="Resin">
+                <option value="Carbon Fiber PLA">
+              </datalist>
+            </div>
+
+            <!-- Dimensions -->
+            <div class="form-group">
+              <label class="form-label" for="form-dimensions">
+                <span>Dimensions</span>
+              </label>
+              <input type="text" id="form-dimensions" class="form-input" placeholder="15 × 8 × 10 cm">
+            </div>
+
+            <!-- Weight -->
+            <div class="form-group">
+              <label class="form-label" for="form-weight">
+                <span>Weight</span>
+              </label>
+              <input type="text" id="form-weight" class="form-input" placeholder="120g">
+            </div>
+
+            <!-- Print Time -->
+            <div class="form-group">
+              <label class="form-label" for="form-print-time">
+                <span>Print Time</span>
+              </label>
+              <input type="text" id="form-print-time" class="form-input" placeholder="6 hours">
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Media Assets -->
+        <div class="form-section">
+          <h3 class="section-title"><span>🖼️</span> Media Assets & Photos</h3>
+          
+          <div class="media-box">
+            <div class="media-helper-alert">
+              <span>💡</span>
+              <div>
+                Images are automatically assigned standard relative paths: <code>assets/images/{slug}-{index}.webp</code>.<br>
+                When ready, copy your rendered/photo files into <code>public/assets/images/</code> and <code>public/assets/videos/</code>.
+              </div>
+            </div>
+
+            <!-- Images Preview Grid -->
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                <label style="font-weight: 600; font-size: 0.8rem; color: var(--text-secondary);">Product Images (Cover is first):</label>
+                <span id="images-count-badge" style="font-size: 0.72rem; color: var(--text-muted);">0 images</span>
+              </div>
+              <div id="images-preview-grid" class="images-preview-grid">
+                <!-- Dynamically rendered image preview cards -->
+              </div>
+            </div>
+
+            <!-- Upload / Add Image Files -->
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <label class="btn btn-secondary btn-sm" style="cursor: pointer;">
+                <span>📁</span> Select Local Images
+                <input type="file" id="input-image-files" multiple accept="image/*" style="display: none;">
+              </label>
+              
+              <div style="display: flex; gap: 0.4rem; flex: 1; min-width: 260px;">
+                <input type="text" id="input-manual-image-path" class="form-input" placeholder="Or enter manual relative path (e.g. assets/images/model-1.webp)">
+                <button type="button" id="btn-add-manual-image" class="btn btn-secondary btn-sm">Add</button>
+              </div>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 0.25rem 0;">
+
+            <!-- GIF & Video Inputs -->
+            <div class="form-grid-2">
+              <!-- Spin GIF -->
+              <div class="form-group">
+                <label class="form-label" for="form-gif">
+                  <span>Turntable / Spin GIF</span>
+                  <span class="form-hint">assets/images/...</span>
+                </label>
+                <div style="display: flex; gap: 0.4rem;">
+                  <input type="text" id="form-gif" class="form-input" placeholder="assets/images/dragon-spin.gif">
+                  <label class="btn btn-secondary btn-sm btn-icon-only" title="Select GIF file" style="cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    🎞️
+                    <input type="file" id="input-gif-file" accept="image/gif" style="display:none;">
+                  </label>
+                </div>
+              </div>
+
+              <!-- 360 Video -->
+              <div class="form-group">
+                <label class="form-label" for="form-video">
+                  <span>360° Video</span>
+                  <span class="form-hint">assets/videos/...</span>
+                </label>
+                <div style="display: flex; gap: 0.4rem;">
+                  <input type="text" id="form-video" class="form-input" placeholder="assets/videos/dragon-360.mp4">
+                  <label class="btn btn-secondary btn-sm btn-icon-only" title="Select Video file" style="cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    🎥
+                    <input type="file" id="input-video-file" accept="video/mp4,video/webm" style="display:none;">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" id="btn-modal-cancel" class="btn btn-secondary">Cancel</button>
+        <button type="button" id="btn-modal-save" class="btn btn-accent">Save Product</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== GENERIC CONFIRMATION MODAL ==================== -->
+  <div id="confirm-modal-backdrop" class="modal-backdrop">
+    <div class="modal-card" style="max-width: 440px;" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 id="confirm-title" class="modal-title" style="font-size: 1.1rem;">Confirm Action</h3>
+        <button id="btn-confirm-close" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.25rem 1.75rem;">
+        <p id="confirm-message" style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-confirm-cancel" class="btn btn-secondary btn-sm">Cancel</button>
+        <button id="btn-confirm-proceed" class="btn btn-danger btn-sm">Proceed</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Admin JavaScript Engine -->
+  <script src="admin.js"></script>
+</body>
+</html>

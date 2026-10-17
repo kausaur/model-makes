@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Model Makes - Premium 3D printed models, figurines, gadgets, and cosplay props crafted with precision. Pan-India shipping.">
+  <meta name="keywords" content="3D printing, 3D models, figurines, cosplay, gadgets, home decor, maker workshop, India">
+  <meta name="theme-color" content="#0F0F1A">
+  <title>Model Makes // Precision 3D Printed Models & Collectibles</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧊</text></svg>">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. Sticky Header
+       ====================================================================== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#" class="logo" aria-label="Model Makes Home">
+        <span class="logo-cube" aria-hidden="true">🧊</span>
+        <span>MODEL MAKES</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <!-- Action Icons (Theme toggle, Cart, Hamburger) -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Theme">
+          <!-- Sun Icon for Light Mode Switch -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Moon Icon for Dark Mode Switch -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <!-- Cart Button -->
+        <button id="cartBtn" class="cart-btn" aria-label="Open Shopping Cart" title="View Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="cartCount" class="cart-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="hamburgerBtn" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">Contact via WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       2. Hero Section
+       ====================================================================== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <!-- Left Column: Copy & Calls to Action -->
+      <div class="hero-content">
+        <span class="hero-eyebrow">3D Printed Creations</span>
+        <h1 class="hero-title">Precision Prints,<br>Crafted for You</h1>
+        <p class="hero-sub">
+          Detailed 3D-printed models made to order. From figurines to gadgets &mdash; designed, printed, and finished by hand.
+        </p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn btn-cta">Browse Collection</a>
+          <a href="https://wa.me/919999999999?text=Hi%20Model%20Makes!%20I%20am%20interested%20in%20a%20custom%203D%20print." target="_blank" rel="noopener noreferrer" class="btn btn-outline">Custom Order</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Decorative Visual & Badge -->
+      <div class="hero-art-wrapper">
+        <div class="hero-art">
+          <div class="hero-art-graphic">
+            <div class="hero-art-icon" aria-hidden="true">🖨️</div>
+            <div class="hero-art-label">🖨️ Hero Image</div>
+            <div class="hero-art-sub">0.12mm ULTRA-RES // DUAL EXTRUSION</div>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <span>Made in India 🇮🇳</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. Trust Bar
+       ====================================================================== -->
+  <section class="trust-bar" aria-label="Trust Factors">
+    <div class="wrap trust-grid">
+      <!-- 1: 3D Printed -->
+      <div class="trust-item">
+        <div class="trust-icon-box" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+          </svg>
+        </div>
+        <span class="trust-text">3D Printed</span>
+      </div>
+
+      <!-- 2: Hand Finished -->
+      <div class="trust-item">
+        <div class="trust-icon-box" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4 5 5 0 013-4.5V5a2 2 0 114 0v7.5A5 5 0 0113 17a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          </svg>
+        </div>
+        <span class="trust-text">Hand Finished</span>
+      </div>
+
+      <!-- 3: Secure Packaging -->
+      <div class="trust-item">
+        <div class="trust-icon-box" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+        </div>
+        <span class="trust-text">Secure Packaging</span>
+      </div>
+
+      <!-- 4: Pan-India Shipping -->
+      <div class="trust-item">
+        <div class="trust-icon-box" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+          </svg>
+        </div>
+        <span class="trust-text">Pan-India Shipping</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. Product Catalog (Shop)
+       ====================================================================== -->
+  <section id="shop" class="shop">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-title-wrap">
+          <h2>Our Collection</h2>
+          <p class="sec-subtitle">Browse our range of 3D-printed models</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs" role="tablist" aria-label="Product categories">
+          <button class="filter-btn active" data-filter="all" role="tab">All</button>
+          <button class="filter-btn" data-filter="figurines" role="tab">Figurines</button>
+          <button class="filter-btn" data-filter="gadgets" role="tab">Gadgets</button>
+          <button class="filter-btn" data-filter="home-decor" role="tab">Home Decor</button>
+          <button class="filter-btn" data-filter="cosplay" role="tab">Cosplay</button>
+        </div>
+      </div>
+
+      <!-- Dynamic Product Grid -->
+      <div id="productGrid" class="product-grid" aria-live="polite">
+        <!-- Rendered by JS from data/products.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. About Section
+       ====================================================================== -->
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="about-content">
+        <h2>About Model Makes</h2>
+        <p>
+          Model Makes began as a passion project inside an independent prototyping lab. We believe additive manufacturing isn't just about printing plastic &mdash; it's an art form that merges mathematical precision with meticulous post-processing craft.
+        </p>
+        <p>
+          Every piece in our catalog is tuned for optimal layer bonding, minimal visible seam lines, and balanced density. Whether you are assembling a full armor cosplay suit or styling your desk with articulating companion prints, each piece is individually calibrated, inspected, and packed with care right here in India.
+        </p>
+        <div class="about-badges">
+          <div class="about-stat">
+            <span class="about-stat-number">0.12<small style="font-size: 1.1rem;">mm</small></span>
+            <span class="about-stat-label">Ultra Resolution</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-number">100%</span>
+            <span class="about-stat-label">Hand Inspected</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-number">5★</span>
+            <span class="about-stat-label">Maker Community</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-art-box">
+        <div style="font-size: 4.5rem; margin-bottom: 0.5rem;" aria-hidden="true">🛠️📐⚙️</div>
+        <h3>The Maker's Workshop</h3>
+        <p>Calibrated FDM & SLA Resin print beds running high-grade PLA+, PETG, and tough technical polymers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. FAQ Section
+       ====================================================================== -->
+  <section id="faq" class="faq">
+    <div class="wrap faq-container">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our 3D printing process, orders, and delivery.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>What materials do you print with?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            We primarily use PLA, PLA+, and PETG for functional and decorative pieces due to their high strength and smooth surface finishes. For intricate miniatures and ultra-fine details, we utilize UV-cured resin.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Can I request a custom model?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            Yes! Send us your 3D model link (STL/OBJ/STEP) or idea via WhatsApp. We will evaluate printability, recommend suitable materials, and provide a quick quote within 24 hours.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How long does shipping take?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            Most in-stock prints ship within 24 to 48 hours. Custom prints take 2-4 days for production and finishing. Pan-India courier delivery typically takes 5-7 business days depending on your location.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Do you ship internationally?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            Not yet, but we're actively working on international shipping partnerships to bring Model Makes to makers worldwide soon!
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>What if my model arrives damaged?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            We pack our prints using shock-absorbing honeycomb wrapping and rigid cartons. In the rare event of transit damage, just send us an unboxing photo/video on WhatsApp and we will replace it free of charge.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Do you offer bulk/wholesale pricing?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            Yes! For corporate gifting, event merchandise, architectural models, or board game component manufacturing, contact us via WhatsApp for tiered wholesale volume pricing.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. Footer
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-cube" aria-hidden="true">🧊</span>
+            <span>MODEL MAKES</span>
+          </a>
+          <p>Precision prints, crafted for you. Bespoke 3D printed models, fidgets, home accents, and cosplay gear engineered to perfection.</p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#shop">Shop Catalog</a>
+            <a href="#about">About Our Studio</a>
+            <a href="#faq">Frequently Asked Questions</a>
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">Contact Maker</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Connect -->
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp (+91 99999 99999)</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram (@modelmakes)</a>
+            <a href="mailto:hello@modelmakes.in">Email: hello@modelmakes.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Model Makes. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       8. Cart Drawer (Slide-in right panel)
+       ====================================================================== -->
+  <aside id="cartDrawer" class="cart-drawer" aria-label="Shopping Cart Drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="cartCloseBtn" class="cart-close" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div id="cartItems" class="cart-body">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span class="cart-summary-label">Estimated Total:</span>
+        <span id="cartTotal" class="cart-total-amount">₹0</span>
+      </div>
+      <a id="cartCheckoutBtn" href="#" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        Order via WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       9. Cart Overlay Backdrop
+       ====================================================================== -->
+  <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       10. Fullscreen Lightbox
+       ====================================================================== -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Media Preview">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+      <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Previous Media">&#8249;</button>
+      <div class="lightbox-media-box" id="lightboxMediaBox"></div>
+      <button class="lightbox-arrow next" id="lightboxNext" aria-label="Next Media">&#8250;</button>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       11. Toast Notification Container
+       ====================================================================== -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Main Application Script (ES Module) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
