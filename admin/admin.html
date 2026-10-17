@@ -155,7 +155,7 @@
               <th>Product Details</th>
               <th>Category</th>
               <th>Price (INR)</th>
-              <th>Specs</th>
+              <th>Finish & Size</th>
               <th>Stock</th>
               <th>Tags</th>
               <th style="text-align: right; width: 140px;">Actions</th>
@@ -373,9 +373,9 @@
           <div class="form-group">
             <label class="form-label" for="form-description">
               <span>Description</span>
-              <span class="form-hint">Maker notes, finish details & dimensions</span>
+              <span class="form-hint">Finish details, design highlights & dimensions</span>
             </label>
-            <textarea id="form-description" class="form-textarea" placeholder="Detailed dragon model, 15cm tall. PLA+ with hand-painted finish."></textarea>
+            <textarea id="form-description" class="form-textarea" placeholder="Detailed dragon display model, 15cm tall with hand-painted satin finish."></textarea>
           </div>
         </div>
 
@@ -427,33 +427,33 @@
           </div>
         </div>
 
-        <!-- Section 3: Technical 3D-Print Specifications -->
+        <!-- Section 3: Product Finish & Specifications -->
         <div class="form-section">
-          <h3 class="section-title"><span>⚙️</span> 3D-Print Specifications</h3>
+          <h3 class="section-title"><span>✨</span> Product Finish & Dimensions</h3>
           
           <div class="form-grid-4">
-            <!-- Material -->
+            <!-- Finish / Appearance -->
             <div class="form-group">
-              <label class="form-label" for="form-material">
-                <span>Material</span>
+              <label class="form-label" for="form-finish">
+                <span>Finish / Appearance</span>
               </label>
-              <input type="text" id="form-material" class="form-input" list="material-suggestions" placeholder="PLA+">
-              <datalist id="material-suggestions">
-                <option value="PLA">
-                <option value="PLA+">
-                <option value="Silk PLA">
-                <option value="PETG">
-                <option value="ABS">
-                <option value="TPU">
-                <option value="Resin">
-                <option value="Carbon Fiber PLA">
+              <input type="text" id="form-finish" class="form-input" list="finish-suggestions" placeholder="Hand-Detailed Satin">
+              <datalist id="finish-suggestions">
+                <option value="Hand-Detailed Satin">
+                <option value="Silky Dual-Tone Sheen">
+                <option value="Matte Anti-Scratch">
+                <option value="Textured Stone Finish">
+                <option value="Weathered Chrome Metallic">
+                <option value="Translucent Ambient Glow">
+                <option value="High Gloss Polished">
+                <option value="Metallic Crimson & Gold">
               </datalist>
             </div>
 
             <!-- Dimensions -->
             <div class="form-group">
               <label class="form-label" for="form-dimensions">
-                <span>Dimensions</span>
+                <span>Dimensions / Size</span>
               </label>
               <input type="text" id="form-dimensions" class="form-input" placeholder="15 × 8 × 10 cm">
             </div>
@@ -463,15 +463,15 @@
               <label class="form-label" for="form-weight">
                 <span>Weight</span>
               </label>
-              <input type="text" id="form-weight" class="form-input" placeholder="120g">
+              <input type="text" id="form-weight" class="form-input" placeholder="185g">
             </div>
 
-            <!-- Print Time -->
+            <!-- Features / Included -->
             <div class="form-group">
-              <label class="form-label" for="form-print-time">
-                <span>Print Time</span>
+              <label class="form-label" for="form-features">
+                <span>Key Features / Included</span>
               </label>
-              <input type="text" id="form-print-time" class="form-input" placeholder="6 hours">
+              <input type="text" id="form-features" class="form-input" placeholder="Ready to Display">
             </div>
           </div>
         </div>

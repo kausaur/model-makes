@@ -25,96 +25,95 @@ const DEFAULT_SAMPLE_CATALOG = [
     "id": "dragon-figurine",
     "name": "Dragon Figurine",
     "category": "figurines",
-    "description": "Detailed dragon model, 15cm tall. PLA+ with hand-painted finish and articulated wings.",
+    "description": "Majestic display dragon featuring high-relief textured scales and sweeping wings. Hand-finished and sealed with a protective satin coat, with a weighted base designed for secure desk or shelf display.",
     "price": 1200,
     "mrp": 1500,
     "currency": "INR",
     "images": [
-      "assets/images/dragon-1.webp",
-      "assets/images/dragon-2.webp"
+      "assets/images/dragon-figurine-1.svg",
+      "assets/images/dragon-figurine-2.svg"
     ],
-    "video": "assets/videos/dragon-360.mp4",
-    "gif": "assets/images/dragon-spin.gif",
+    "video": "",
+    "gif": "",
     "tags": ["bestseller", "new"],
-    "material": "PLA+",
+    "finish": "Hand-Detailed Satin",
     "dimensions": "15 × 8 × 10 cm",
-    "weight": "120g",
-    "printTime": "6 hours",
+    "weight": "185g",
+    "features": "Ready to Display",
     "inStock": true,
-    "featured": false,
+    "featured": true,
     "createdAt": "2026-10-17T18:30:00+05:30",
     "updatedAt": "2026-10-17T18:30:00+05:30"
   },
   {
-    "id": "cyber-skull-cable-holder",
-    "name": "Cyber Skull Cable Organizer",
-    "category": "gadgets",
-    "description": "Futuristic mechanical skull desk organizer with magnetic wire channels and headphone stand horn.",
-    "price": 750,
-    "mrp": 999,
+    "id": "articulated-octopus",
+    "name": "Articulated Octopus",
+    "category": "figurines",
+    "description": "Tactile, fully poseable octopus featuring 8 fluid multi-jointed tentacles that drape naturally. Finished in a dual-color silk sheen that glints dynamically under light.",
+    "price": 800,
+    "mrp": null,
     "currency": "INR",
     "images": [
-      "assets/images/skull-1.webp",
-      "assets/images/skull-2.webp"
+      "assets/images/articulated-octopus-1.svg",
+      "assets/images/articulated-octopus-2.svg"
     ],
     "video": "",
-    "gif": "assets/images/skull-spin.gif",
+    "gif": "",
     "tags": ["bestseller"],
-    "material": "PETG",
-    "dimensions": "12 × 10 × 14 cm",
-    "weight": "160g",
-    "printTime": "8 hours",
+    "finish": "Silky Dual-Tone Sheen",
+    "dimensions": "12 × 12 × 5 cm",
+    "weight": "110g",
+    "features": "Poseable Multi-Jointed",
     "inStock": true,
-    "featured": true,
+    "featured": false,
     "createdAt": "2026-10-17T18:35:00+05:30",
     "updatedAt": "2026-10-17T18:35:00+05:30"
   },
   {
-    "id": "voronoi-ambient-lamp",
-    "name": "Voronoi Hexagonal Ambient Lamp",
-    "category": "home-decor",
-    "description": "Parametric Voronoi geometric lampshade designed for standard E27 or smart RGB LED bulbs.",
-    "price": 2499,
-    "mrp": 3200,
+    "id": "phone-stand",
+    "name": "Ergonomic Phone Stand",
+    "category": "gadgets",
+    "description": "Dual-angle desktop phone stand optimized for video calls and hands-free media viewing. Features discreet cable cutout and anti-slip pads.",
+    "price": 450,
+    "mrp": 600,
     "currency": "INR",
     "images": [
-      "assets/images/lamp-1.webp",
-      "assets/images/lamp-2.webp",
-      "assets/images/lamp-3.webp"
+      "assets/images/phone-stand-1.svg",
+      "assets/images/phone-stand-2.svg"
     ],
-    "video": "assets/videos/lamp-light.mp4",
+    "video": "",
     "gif": "",
-    "tags": ["new", "limited"],
-    "material": "PLA+",
-    "dimensions": "22 × 22 × 28 cm",
-    "weight": "340g",
-    "printTime": "16 hours",
+    "tags": ["bestseller"],
+    "finish": "Matte Anti-Scratch",
+    "dimensions": "9 × 7 × 10 cm",
+    "weight": "95g",
+    "features": "Cable Pass-Through",
     "inStock": true,
     "featured": true,
     "createdAt": "2026-10-17T18:40:00+05:30",
     "updatedAt": "2026-10-17T18:40:00+05:30"
   },
   {
-    "id": "samurai-oni-half-mask",
-    "name": "Samurai Oni Half-Mask",
+    "id": "iron-man-helmet",
+    "name": "Wearable Cyber Helmet",
     "category": "cosplay",
-    "description": "Wearable cyber samurai oni mask with adjustable strap slots and breathable ventilation grilles.",
-    "price": 1850,
-    "mrp": 2500,
+    "description": "Full-scale 1:1 wearable helmet with magnetic faceplate closure, tinted optical visor, and breathable interior foam padding. Finished in metallic crimson and brass gold.",
+    "price": 3500,
+    "mrp": 4500,
     "currency": "INR",
     "images": [
-      "assets/images/mask-1.webp",
-      "assets/images/mask-2.webp"
+      "assets/images/iron-man-helmet-1.svg",
+      "assets/images/iron-man-helmet-2.svg"
     ],
-    "video": "assets/videos/mask-360.mp4",
+    "video": "",
     "gif": "",
     "tags": ["custom", "bestseller"],
-    "material": "Resin",
-    "dimensions": "18 × 14 × 12 cm",
-    "weight": "190g",
-    "printTime": "11 hours",
-    "inStock": false,
-    "featured": false,
+    "finish": "Metallic Lacquer & Gold",
+    "dimensions": "30 × 22 × 26 cm",
+    "weight": "680g",
+    "features": "Padded Interior & Visor",
+    "inStock": true,
+    "featured": true,
     "createdAt": "2026-10-17T18:45:00+05:30",
     "updatedAt": "2026-10-17T18:45:00+05:30"
   }
@@ -547,10 +546,10 @@ function openForm(product = null) {
     document.getElementById('form-featured').checked = !!product.featured;
     document.getElementById('label-featured-status').textContent = product.featured ? 'Featured ⭐' : 'Regular';
 
-    document.getElementById('form-material').value = product.material || '';
+    document.getElementById('form-finish').value = product.finish || product.material || '';
     document.getElementById('form-dimensions').value = product.dimensions || '';
     document.getElementById('form-weight').value = product.weight || '';
-    document.getElementById('form-print-time').value = product.printTime || '';
+    document.getElementById('form-features').value = product.features || '';
     
     document.getElementById('form-gif').value = product.gif || '';
     document.getElementById('form-video').value = product.video || '';
@@ -570,7 +569,7 @@ function openForm(product = null) {
   } else {
     // Add Mode
     currentEditingId = null;
-    modalTitleText.textContent = 'Add New 3D-Printed Model';
+    modalTitleText.textContent = 'Add New Finished Model';
     modalTitleIcon.textContent = '➕';
 
     document.getElementById('form-name').value = '';
@@ -591,10 +590,10 @@ function openForm(product = null) {
     document.getElementById('form-featured').checked = false;
     document.getElementById('label-featured-status').textContent = 'Regular';
 
-    document.getElementById('form-material').value = 'PLA+';
+    document.getElementById('form-finish').value = 'Hand-Detailed Satin';
     document.getElementById('form-dimensions').value = '';
     document.getElementById('form-weight').value = '';
-    document.getElementById('form-print-time').value = '';
+    document.getElementById('form-features').value = 'Ready to Display';
 
     document.getElementById('form-gif').value = '';
     document.getElementById('form-video').value = '';
@@ -633,10 +632,10 @@ function handleFormSubmit(e) {
   const mrpVal = document.getElementById('form-mrp').value.trim();
   const inStock = document.getElementById('form-instock').checked;
   const featured = document.getElementById('form-featured').checked;
-  const material = document.getElementById('form-material').value.trim();
+  const finish = document.getElementById('form-finish').value.trim();
   const dimensions = document.getElementById('form-dimensions').value.trim();
   const weight = document.getElementById('form-weight').value.trim();
-  const printTime = document.getElementById('form-print-time').value.trim();
+  const features = document.getElementById('form-features').value.trim();
   const gif = document.getElementById('form-gif').value.trim();
   const video = document.getElementById('form-video').value.trim();
 
@@ -683,9 +682,9 @@ function handleFormSubmit(e) {
   // Extract images paths
   const images = currentFormImages.map(img => img.path);
 
-  // If no image provided, assign default pattern for maker's convenience
+  // If no image provided, assign default pattern for convenience
   if (images.length === 0) {
-    images.push(`assets/images/${finalSlug}-1.webp`);
+    images.push(`assets/images/${finalSlug}-1.svg`);
   }
 
   const formData = {
@@ -695,10 +694,10 @@ function handleFormSubmit(e) {
     description,
     price: Math.round(priceNum),
     mrp: mrpVal ? Math.round(parseFloat(mrpVal)) : null,
-    material: material || 'PLA+',
+    finish: finish || 'Hand-Detailed Satin',
     dimensions: dimensions || '',
     weight: weight || '',
-    printTime: printTime || '',
+    features: features || 'Ready to Display',
     inStock,
     featured,
     tags: Array.from(selectedTags),
@@ -887,13 +886,13 @@ function renderProductList() {
 
   // Filter
   let filtered = products.filter(p => {
-    // Search match (name, id, tags, material)
+    // Search match (name, id, tags, finish)
     if (searchTerm) {
       const nameMatch = (p.name || '').toLowerCase().includes(searchTerm);
       const idMatch = (p.id || '').toLowerCase().includes(searchTerm);
       const tagMatch = (p.tags || []).some(t => t.toLowerCase().includes(searchTerm));
-      const matMatch = (p.material || '').toLowerCase().includes(searchTerm);
-      if (!nameMatch && !idMatch && !tagMatch && !matMatch) return false;
+      const finishMatch = (p.finish || '').toLowerCase().includes(searchTerm);
+      if (!nameMatch && !idMatch && !tagMatch && !finishMatch) return false;
     }
 
     // Category match
@@ -981,7 +980,7 @@ function renderProductList() {
           </div>
         </td>
         <td style="color: var(--text-secondary); font-size: 0.8rem;">
-          <div>${escapeHtml(p.material || 'PLA+')}</div>
+          <div>${escapeHtml(p.finish || 'Hand-Finished')}</div>
           <div style="font-size: 0.72rem; color: var(--text-muted);">${escapeHtml(p.dimensions || '—')}</div>
         </td>
         <td>
@@ -1195,10 +1194,10 @@ function loadFromJSON(jsonString, isMerge = false) {
         video: item.video || '',
         gif: item.gif || '',
         tags: Array.isArray(item.tags) ? item.tags : [],
-        material: item.material || 'PLA+',
+        finish: item.finish || item.material || 'Hand-Detailed Satin',
         dimensions: item.dimensions || '',
         weight: item.weight || '',
-        printTime: item.printTime || '',
+        features: item.features || 'Ready to Display',
         inStock: item.inStock !== false,
         featured: !!item.featured,
         createdAt: item.createdAt || new Date().toISOString(),

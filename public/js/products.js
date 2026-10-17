@@ -97,12 +97,12 @@ export function renderProducts(products = cachedProducts, filter = 'all') {
         `
         : '';
 
-      // Specs list
+      // Product details (finish, size, weight)
       const specsHtml = `
         <div class="card-specs">
-          ${product.material ? `<span class="spec">${product.material}</span>` : ''}
+          ${product.finish ? `<span class="spec">${product.finish}</span>` : ''}
           ${product.dimensions ? `<span class="spec">${product.dimensions}</span>` : ''}
-          ${product.printTime ? `<span class="spec">${product.printTime}</span>` : ''}
+          ${product.weight ? `<span class="spec">${product.weight}</span>` : ''}
         </div>
       `;
 
@@ -209,7 +209,7 @@ function attachCardEvents(products) {
           type: 'image',
           src: img,
           alt: `${product.name} (View ${idx + 1})`,
-          caption: `${product.name} - ${product.material} // ${product.dimensions}`
+          caption: `${product.name}${product.finish ? ' - ' + product.finish : ''}${product.dimensions ? ' // ' + product.dimensions : ''}`
         }));
 
         if (product.video) {
@@ -217,7 +217,7 @@ function attachCardEvents(products) {
             type: 'video',
             src: product.video,
             alt: `${product.name} Video Preview`,
-            caption: `${product.name} - 3D Printing Timelapse`
+            caption: `${product.name} - 360° Video Showcase`
           });
         }
 
