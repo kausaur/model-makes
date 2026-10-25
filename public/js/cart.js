@@ -1,10 +1,16 @@
 /**
  * Model Makes - Cart Controller
- * Handles persistent shopping cart, drawer rendering, quantities, and WhatsApp checkout generation.
+ * Handles persistent shopping cart, drawer rendering, quantities, bulk discounts, and WhatsApp checkout generation.
  */
 
 const CART_KEY = 'mm-cart';
 const WHATSAPP_NUMBER = '919818843996';
+
+/** Bulk discount tiers: { minQty, discountPct } */
+const BULK_TIERS = [
+  { minQty: 20, discountPct: 20 },
+  { minQty: 10, discountPct: 10 }
+];
 
 /**
  * Retrieves the current cart array from localStorage.
@@ -42,26 +48,72 @@ export function dispatchCartUpdated() {
     detail: {
       cart: getCart(),
       totalCount: totals.count,
-      totalAmount: totals.amount
+      totalAmount: totals.finalAmount
     }
   });
   window.dispatchEvent(event);
 }
 
 /**
- * Calculates total item count and currency amount in the cart.
- * @returns {{count: number, amount: number}}
+ * Determines the applicable bulk discount tier based on total item count.
+ * @param {number} count - Total items in cart
+ * @returns {{discountPct: number, minQty: number} | null}
+ */
+export function getBulkTier(count) {
+  for (const tier of BULK_TIERS) {
+    if (count >= tier.minQty) return tier;
+  }
+  return null;
+}
+
+/**
+ * Gets the next tier the customer can unlock.
+ * @param {number} count
+ * @returns {{discountPct: number, minQty: number, remaining: number} | null}
+ */
+export function getNextTier(count) {
+  // Already at max tier
+  if (count >= BULK_TIERS[0].minQty) return null;
+
+  // Find next tier to unlock
+  const reverseTiers = [...BULK_TIERS].reverse();
+  for (const tier of reverseTiers) {
+    if (count < tier.minQty) {
+      return { ...tier, remaining: tier.minQty - count };
+    }
+  }
+  return null;
+}
+
+/**
+ * Calculates total item count, subtotal, discount, and final amount.
+ * @returns {{count: number, subtotal: number, discountPct: number, discountAmount: number, finalAmount: number}}
  */
 export function getCartTotal() {
   const cart = getCart();
-  return cart.reduce(
+  const result = cart.reduce(
     (acc, item) => {
       acc.count += item.qty;
-      acc.amount += item.price * item.qty;
+      acc.subtotal += item.price * item.qty;
       return acc;
     },
-    { count: 0, amount: 0 }
+    { count: 0, subtotal: 0 }
   );
+
+  const tier = getBulkTier(result.count);
+  const discountPct = tier ? tier.discountPct : 0;
+  const discountAmount = Math.round(result.subtotal * discountPct / 100);
+  const finalAmount = result.subtotal - discountAmount;
+
+  return {
+    count: result.count,
+    subtotal: result.subtotal,
+    discountPct,
+    discountAmount,
+    finalAmount,
+    // backward compat alias
+    amount: finalAmount
+  };
 }
 
 /**
@@ -141,7 +193,7 @@ export function formatCurrency(amount) {
  */
 export function generateWhatsAppOrderUrl() {
   const cart = getCart();
-  const { count, amount } = getCartTotal();
+  const { count, subtotal, discountPct, discountAmount, finalAmount } = getCartTotal();
 
   if (cart.length === 0) return '#';
 
@@ -151,7 +203,13 @@ export function generateWhatsAppOrderUrl() {
     msg += `${index + 1}. *${item.name}* × ${item.qty} (${formatCurrency(item.price * item.qty)})\n`;
   });
 
-  msg += `\n*Total Amount:* ${formatCurrency(amount)}\n`;
+  msg += `\n*Subtotal:* ${formatCurrency(subtotal)}\n`;
+
+  if (discountPct > 0) {
+    msg += `*Bulk Discount (${discountPct}%):* -${formatCurrency(discountAmount)}\n`;
+    msg += `*Total Amount:* ${formatCurrency(finalAmount)}\n`;
+  }
+
   msg += `*Items:* ${count}\n\n`;
   msg += `Please confirm availability, production lead time, and payment details. Thank you!`;
 
@@ -170,13 +228,14 @@ export function renderCartDrawer() {
   if (!cartItemsEl) return;
 
   const cart = getCart();
-  const { amount } = getCartTotal();
+  const { count, subtotal, discountPct, discountAmount, finalAmount } = getCartTotal();
 
   if (cart.length === 0) {
     cartItemsEl.innerHTML = `
       <div class="empty-cart">
         <div class="empty-cart-icon">🛒</div>
         <p class="empty-cart-text">Your cart is empty</p>
+        <p class="empty-cart-hint">Add items to unlock bulk discounts!</p>
         <button class="btn btn-outline" id="cartBrowseBtn">Browse Collection</button>
       </div>
     `;
@@ -197,7 +256,8 @@ export function renderCartDrawer() {
 
   if (cartFooter) cartFooter.style.display = 'flex';
 
-  cartItemsEl.innerHTML = cart
+  // Line items
+  let html = cart
     .map(
       (item) => `
       <div class="line-item" data-id="${item.id}">
@@ -219,8 +279,60 @@ export function renderCartDrawer() {
     )
     .join('');
 
-  if (cartTotalEl) {
-    cartTotalEl.textContent = formatCurrency(amount);
+  // Bulk discount progress / info banner
+  const nextTier = getNextTier(count);
+  if (discountPct > 0) {
+    html += `
+      <div class="cart-discount-banner cart-discount-active">
+        <span class="cart-discount-icon">🎉</span>
+        <span class="cart-discount-text"><strong>${discountPct}% bulk discount</strong> applied! You save ${formatCurrency(discountAmount)}</span>
+      </div>
+    `;
+  } else if (nextTier) {
+    const progress = Math.round((count / nextTier.minQty) * 100);
+    html += `
+      <div class="cart-discount-banner cart-discount-progress">
+        <span class="cart-discount-icon">🏷️</span>
+        <div class="cart-discount-detail">
+          <span class="cart-discount-text">Add <strong>${nextTier.remaining} more</strong> item${nextTier.remaining > 1 ? 's' : ''} to unlock <strong>${nextTier.discountPct}% off</strong></span>
+          <div class="cart-progress-bar">
+            <div class="cart-progress-fill" style="width: ${progress}%"></div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  cartItemsEl.innerHTML = html;
+
+  // Update footer summary
+  const cartSummaryEl = document.querySelector('.cart-summary');
+  if (cartSummaryEl) {
+    let summaryHtml = '';
+    if (discountPct > 0) {
+      summaryHtml = `
+        <div class="cart-summary-breakdown">
+          <div class="cart-summary-row">
+            <span>Subtotal (${count} items)</span>
+            <span>${formatCurrency(subtotal)}</span>
+          </div>
+          <div class="cart-summary-row cart-summary-discount">
+            <span>Bulk Discount (${discountPct}%)</span>
+            <span>-${formatCurrency(discountAmount)}</span>
+          </div>
+          <div class="cart-summary-row cart-summary-total">
+            <span>Total</span>
+            <span class="cart-total-amount">${formatCurrency(finalAmount)}</span>
+          </div>
+        </div>
+      `;
+    } else {
+      summaryHtml = `
+        <span class="cart-summary-label">Estimated Total:</span>
+        <span class="cart-total-amount">${formatCurrency(finalAmount)}</span>
+      `;
+    }
+    cartSummaryEl.innerHTML = summaryHtml;
   }
 
   if (checkoutBtn) {
@@ -295,15 +407,20 @@ export function showToast(message) {
  */
 export function updateCartBadge() {
   const countBadge = document.getElementById('cartCount');
-  if (!countBadge) return;
-
+  const floatingBadge = document.getElementById('floatingCartBadge');
   const { count } = getCartTotal();
-  countBadge.textContent = count;
-  countBadge.style.display = count > 0 ? 'flex' : 'none';
 
-  // Quick bump animation
-  countBadge.classList.add('bump');
-  setTimeout(() => countBadge.classList.remove('bump'), 200);
+  if (countBadge) {
+    countBadge.textContent = count;
+    countBadge.style.display = count > 0 ? 'flex' : 'none';
+    countBadge.classList.add('bump');
+    setTimeout(() => countBadge.classList.remove('bump'), 200);
+  }
+
+  if (floatingBadge) {
+    floatingBadge.textContent = count;
+    floatingBadge.style.display = count > 0 ? 'flex' : 'none';
+  }
 }
 
 /**

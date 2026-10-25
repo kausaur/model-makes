@@ -29,7 +29,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 5. Setup Smooth Scrolling for In-Page Anchor Links
   initSmoothScroll();
+
+  // 6. Setup Floating Quick Cart
+  initFloatingCart();
 });
+
+/**
+ * Initializes floating quick cart button.
+ */
+function initFloatingCart() {
+  const floatingBtn = document.getElementById('floatingCartBtn');
+  if (!floatingBtn) return;
+
+  floatingBtn.addEventListener('click', openCart);
+
+  // Show only after scrolling down
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 350) {
+      floatingBtn.classList.add('visible');
+    } else {
+      floatingBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+}
 
 /**
  * Initializes mobile hamburger toggle and menu overlay behavior.

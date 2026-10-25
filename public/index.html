@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Node 'n' Nozzle - Premium handcrafted models, collectibles, figurines, gadgets, and decor crafted with precision. Pan-India shipping.">
-  <meta name="keywords" content="models, collectibles, figurines, cosplay, gadgets, home decor, maker studio, India">
+  <meta name="description" content="Node 'n' Nozzle - Handcrafted precision 3D models, tactile collectibles, figurines, gadgets, and bespoke display decor. Bulk wholesale discounts up to 20% off. Pan-India shipping.">
+  <meta name="keywords" content="models, collectibles, figurines, cosplay, gadgets, home decor, maker studio, 3D printing, bulk orders, wholesale, India">
   <meta name="theme-color" content="#0F0F1A">
-  <title>Node 'n' Nozzle // Precision Models, Collectibles & Handcrafted Decor</title>
+  <title>Node 'n' Nozzle // Handcrafted Models, Tactile Gadgets & Collectibles</title>
 
-  <!-- Google Fonts: Crafty Artisan Typography -->
+  <!-- Google Fonts: Crafty Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="css/base.css">
@@ -25,6 +25,21 @@
 <body>
 
   <!-- ======================================================================
+       0. Announcement / Bulk Promo Bar
+       ====================================================================== -->
+  <aside class="promo-bar" aria-label="Special Offers">
+    <div class="wrap promo-inner">
+      <div class="promo-content">
+        <span class="promo-tag">LIMITED OFFER</span>
+        <span class="promo-msg">
+          ⚡ <strong>Volume Savings:</strong> Buy 10+ items get <strong>10% OFF</strong> &bull; Buy 20+ items get <strong>20% OFF</strong> &bull; Free Pan-India Courier on ₹999+
+        </span>
+      </div>
+      <a href="#bulk-discount" class="promo-link">View Tiers &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
        1. Sticky Header
        ====================================================================== -->
   <header class="site-header">
@@ -33,12 +48,13 @@
         <span class="logo-cube" aria-hidden="true">
           <img src="assets/images/logo-icon.svg" alt="Node 'n' Nozzle" width="26" height="26">
         </span>
-        <span>NODE 'N' NOZZLE</span>
+        <span class="logo-text">NODE 'N' NOZZLE</span>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="#shop">Shop</a>
+        <a href="#bulk-discount">Bulk Discounts</a>
         <a href="#about">About</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -76,10 +92,13 @@
 
     <!-- Mobile Navigation Overlay -->
     <div id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
+      <a href="#shop">Shop Catalog</a>
+      <a href="#bulk-discount">Bulk Discounts (Up to 20% Off)</a>
+      <a href="#about">About Our Studio</a>
       <a href="#faq">FAQ</a>
-      <a href="https://wa.me/919818843996" target="_blank" rel="noopener noreferrer">Contact via WhatsApp (+91 98188 43996)</a>
+      <a href="https://wa.me/919818843996?text=Hi%20Node%20'n'%20Nozzle!%20I'd%20like%20to%20inquire%20about%20a%20bulk%20order." target="_blank" rel="noopener noreferrer" class="mobile-nav-whatsapp">
+        💬 WhatsApp Concierge (+91 98188 43996)
+      </a>
     </div>
   </header>
 
@@ -90,14 +109,36 @@
     <div class="wrap hero-grid">
       <!-- Left Column: Copy & Calls to Action -->
       <div class="hero-content">
-        <span class="hero-eyebrow">Handcrafted Models & Collectibles</span>
-        <h1 class="hero-title">Precision Crafted,<br>Ready to Display</h1>
+        <div class="hero-badge-group">
+          <span class="hero-eyebrow">Artisanal Studio Collection</span>
+          <span class="hero-subbadge">⚡ Bulk Savings Available</span>
+        </div>
+        <h1 class="hero-title">Precision Crafted,<br><span class="hero-title-highlight">Ready to Display</span></h1>
         <p class="hero-sub">
-          Finished display-ready models, tactile collectibles, and desk essentials. Individually detailed, inspected, and delivered directly to your doorstep.
+          Collector-grade finished models, fidget gadgets, and statement decor. Individually detailed, inspected, and delivered directly to your doorstep across India.
         </p>
+
+        <!-- Social Proof Stats -->
+        <div class="hero-social-proof">
+          <div class="proof-rating">
+            <span class="stars">★★★★★</span>
+            <span class="proof-score">4.9 / 5</span>
+          </div>
+          <span class="proof-divider">&bull;</span>
+          <span class="proof-text">500+ Handcrafted Models Shipped</span>
+          <span class="proof-divider">&bull;</span>
+          <span class="proof-tag">🇮🇳 Made in India</span>
+        </div>
+
         <div class="hero-actions">
-          <a href="#shop" class="btn btn-cta">Browse Collection</a>
-          <a href="https://wa.me/919818843996?text=Hi%20Node%20'n'%20Nozzle!%20I%20am%20interested%20in%20a%20custom%20or%20bulk%20order." target="_blank" rel="noopener noreferrer" class="btn btn-outline">Bulk / Custom Order</a>
+          <a href="#shop" class="btn btn-cta">
+            <span>Explore Collection</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#bulk-discount" class="btn btn-outline">
+            <span>Bulk Order Savings</span>
+            <span class="btn-pill-pct">Up to 20% Off</span>
+          </a>
         </div>
       </div>
 
@@ -105,9 +146,16 @@
       <div class="hero-art-wrapper">
         <div class="hero-art">
           <img src="assets/images/hero-showcase.jpg" alt="Node 'n' Nozzle Handcrafted Finished Models Showcase" class="hero-showcase-img" loading="eager">
+          <div class="hero-art-overlay">
+            <span class="hero-art-status"><span class="pulse-dot"></span> Studio Open &bull; Dispatching Daily</span>
+          </div>
         </div>
-        <div class="hero-badge">
-          <span>Made in India 🇮🇳</span>
+        <div class="hero-floating-card">
+          <div class="floating-icon">📦</div>
+          <div class="floating-details">
+            <strong>100% Transit Safe</strong>
+            <span>Direct Doorstep Courier</span>
+          </div>
         </div>
       </div>
     </div>
@@ -125,7 +173,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
         </div>
-        <span class="trust-text">Ready to Display</span>
+        <div class="trust-info">
+          <span class="trust-title">Ready to Display</span>
+          <span class="trust-desc">Zero assembly or painting needed</span>
+        </div>
       </div>
 
       <!-- 2: Hand Finished -->
@@ -135,17 +186,23 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4 5 5 0 013-4.5V5a2 2 0 114 0v7.5A5 5 0 0113 17a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
           </svg>
         </div>
-        <span class="trust-text">Hand Finished</span>
+        <div class="trust-info">
+          <span class="trust-title">Hand Finished</span>
+          <span class="trust-desc">Polished, cured & inspected</span>
+        </div>
       </div>
 
-      <!-- 3: Secure Packaging -->
+      <!-- 3: Bulk Discounts -->
       <div class="trust-item">
         <div class="trust-icon-box" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
           </svg>
         </div>
-        <span class="trust-text">Secure Packaging</span>
+        <div class="trust-info">
+          <span class="trust-title">Volume Discounts</span>
+          <span class="trust-desc">10% off at 10 &bull; 20% off at 20</span>
+        </div>
       </div>
 
       <!-- 4: Pan-India Shipping -->
@@ -155,7 +212,83 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
           </svg>
         </div>
-        <span class="trust-text">Pan-India Shipping</span>
+        <div class="trust-info">
+          <span class="trust-title">Pan-India Courier</span>
+          <span class="trust-desc">Bubble-cushioned transit guarantee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3.5. Bulk Discount Tiers Showcase (NEW)
+       ====================================================================== -->
+  <section id="bulk-discount" class="bulk-section" aria-label="Bulk Order Discounts">
+    <div class="wrap">
+      <div class="bulk-header">
+        <span class="section-tag">AUTOMATIC SAVINGS</span>
+        <h2>Volume Order Discounts</h2>
+        <p>Whether you're buying gifts for friends, stocking retail shelves, or curating event favors, discounts apply automatically at checkout.</p>
+      </div>
+
+      <div class="bulk-grid">
+        <!-- Tier 1 -->
+        <div class="bulk-card">
+          <div class="bulk-card-badge">STANDARD</div>
+          <div class="bulk-qty">1 – 9 Units</div>
+          <div class="bulk-discount-val">Retail Price</div>
+          <p class="bulk-desc">Individually handcrafted, hand-inspected, and shipped in shockproof protective packaging.</p>
+          <ul class="bulk-features">
+            <li>✓ Full custom color choices</li>
+            <li>✓ Individual gift packaging</li>
+            <li>✓ Dispatched in 24-48 hrs</li>
+          </ul>
+          <a href="#shop" class="btn btn-sm btn-outline">Shop Individual</a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="bulk-card bulk-card-highlight">
+          <div class="bulk-card-badge popular">MOST POPULAR</div>
+          <div class="bulk-qty">10 – 19 Units</div>
+          <div class="bulk-discount-val">10% OFF</div>
+          <p class="bulk-desc">Applied automatically in your cart. Ideal for corporate desk drops, gaming groups, and party favors.</p>
+          <ul class="bulk-features">
+            <li>✓ <strong>Instant 10% cart discount</strong></li>
+            <li>✓ Mix and match any models</li>
+            <li>✓ Free courier shipping included</li>
+          </ul>
+          <a href="#shop" class="btn btn-sm btn-cta">Add 10 Items to Cart</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bulk-card bulk-card-best">
+          <div class="bulk-card-badge best-val">MAX VALUE</div>
+          <div class="bulk-qty">20+ Units</div>
+          <div class="bulk-discount-val">20% OFF</div>
+          <p class="bulk-desc">Maximum online discount applied automatically in your shopping cart. Best margins for resellers.</p>
+          <ul class="bulk-features">
+            <li>✓ <strong>Instant 20% cart discount</strong></li>
+            <li>✓ Priority production queue</li>
+            <li>✓ Free priority express shipping</li>
+          </ul>
+          <a href="#shop" class="btn btn-sm btn-cta">Add 20 Items to Cart</a>
+        </div>
+
+        <!-- Tier 4: Custom / Wholesale -->
+        <div class="bulk-card bulk-card-custom">
+          <div class="bulk-card-badge">ENTERPRISE</div>
+          <div class="bulk-qty">50+ Units</div>
+          <div class="bulk-discount-val">Custom Quote</div>
+          <p class="bulk-desc">Custom logo embossing, bespoke PMS color matching, branded packaging, and dedicated wholesale support.</p>
+          <ul class="bulk-features">
+            <li>✓ Custom 3D design & prototyping</li>
+            <li>✓ Custom brand engraving</li>
+            <li>✓ Direct manager support</li>
+          </ul>
+          <a href="https://wa.me/919818843996?text=Hi%20Node%20'n'%20Nozzle!%20I'm%20interested%20in%20a%2050%2B%20unit%20wholesale%20order." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-whatsapp">
+            Inquire via WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -167,17 +300,18 @@
     <div class="wrap">
       <div class="sec-header">
         <div class="sec-title-wrap">
-          <h2>Our Collection</h2>
-          <p class="sec-subtitle">Finished models, collectibles & handcrafted decor</p>
+          <span class="section-tag">CATALOG</span>
+          <h2>Our Studio Collection</h2>
+          <p class="sec-subtitle">Artisanal finished models, tactical collectibles & tactile fidgets</p>
         </div>
 
         <!-- Filter Tabs -->
         <div class="filter-tabs" role="tablist" aria-label="Product categories">
-          <button class="filter-btn active" data-filter="all" role="tab">All</button>
+          <button class="filter-btn active" data-filter="all" role="tab">All Models</button>
           <button class="filter-btn" data-filter="figurines" role="tab">Figurines</button>
-          <button class="filter-btn" data-filter="gadgets" role="tab">Gadgets</button>
+          <button class="filter-btn" data-filter="gadgets" role="tab">Gadgets & Fidgets</button>
           <button class="filter-btn" data-filter="home-decor" role="tab">Home Decor</button>
-          <button class="filter-btn" data-filter="cosplay" role="tab">Cosplay</button>
+          <button class="filter-btn" data-filter="cosplay" role="tab">Cosplay Props</button>
         </div>
       </div>
 
@@ -194,12 +328,13 @@
   <section id="about" class="about">
     <div class="wrap about-grid">
       <div class="about-content">
+        <span class="section-tag">BEHIND THE CRAFT</span>
         <h2>About Node 'n' Nozzle</h2>
         <p>
-          Node 'n' Nozzle is an independent studio crafting unique display pieces, tactile collectibles, and wearable pop-culture art. We bridge modern sculpture with meticulous hand-finishing to create statement pieces for your home, office, and cosplay collection.
+          Node 'n' Nozzle is an independent maker studio based in India, specializing in finished display pieces, tactile mechanical gadgets, and collectible pop-culture art. We bridge state-of-the-art 3D manufacturing with meticulous post-processing and hand-finishing.
         </p>
         <p>
-          Every item in our catalog arrives completely finished, hand-smoothed, and sealed with protective coatings. Whether you are adding an articulated companion to your desk setup or showcasing a full-scale wearable helmet, each piece is individually detailed, inspected, and securely packed right here in India.
+          Unlike raw unpolished 3D prints, every piece from our studio arrives completely assembled, hand-smoothed, cured, and protected with durable satin or matte coatings. Whether it's an articulated wyvern for your workspace or a telescoping samurai blade, your piece is built to be admired and handled every day.
         </p>
         <div class="about-badges">
           <div class="about-stat">
@@ -207,20 +342,25 @@
             <span class="about-stat-label">Ready to Display</span>
           </div>
           <div class="about-stat">
-            <span class="about-stat-number">Hand</span>
-            <span class="about-stat-label">Finished & Polished</span>
+            <span class="about-stat-number">20%</span>
+            <span class="about-stat-label">Max Bulk Discount</span>
           </div>
           <div class="about-stat">
             <span class="about-stat-number">5★</span>
-            <span class="about-stat-label">Collector Satisfaction</span>
+            <span class="about-stat-label">Verified Quality</span>
           </div>
         </div>
       </div>
 
       <div class="about-art-box">
-        <div style="font-size: 4.5rem; margin-bottom: 0.5rem;" aria-hidden="true">🎨✨🏆</div>
+        <div class="about-art-icon" aria-hidden="true">🎨✨⚙️</div>
         <h3>The Finished Difference</h3>
-        <p>Silky smooth surfaces, rich custom color finishes, and durable solid-core construction designed to look stunning on display.</p>
+        <p>Silky-smooth touch, vivid silk metallic filaments, precision moving joints, and solid internal infill crafted for longevity.</p>
+        <div class="about-pill-wrap">
+          <span class="about-micro-pill">Dense Solid Infill</span>
+          <span class="about-micro-pill">Silk Luster Finish</span>
+          <span class="about-micro-pill">Zero Layer Artifacts</span>
+        </div>
       </div>
     </div>
   </section>
@@ -231,18 +371,39 @@
   <section id="faq" class="faq">
     <div class="wrap faq-container">
       <div class="faq-header">
+        <span class="section-tag">HELP & SUPPORT</span>
         <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about our finished models, custom orders, and delivery.</p>
+        <p>Everything you need to know about our finished models, volume discounts, shipping, and guarantees.</p>
       </div>
 
       <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How do the bulk order discounts work?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            Our bulk discounts are automatic! When you add <strong>10 or more items</strong> to your shopping cart, you get an instant <strong>10% discount</strong> on your subtotal. When you reach <strong>20 or more items</strong>, you unlock an instant <strong>20% discount</strong>. You can mix and match any models across the catalog!
+          </div>
+        </details>
+
         <details class="faq-item">
           <summary class="faq-question">
             <span>Are the models delivered fully assembled and finished?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Yes, absolutely! Every model arrives completely assembled, hand-finished, and ready to display or use right out of the box. No painting, gluing, or preparation is required.
+            Yes, 100%! Every model arrives completely assembled, hand-finished, inspected, and ready to display or use right out of the box. No painting, gluing, or preparation is required.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How does the WhatsApp checkout process work?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            When you click "Order via WhatsApp", your cart creates a pre-formatted message listing your items, quantities, and discounts. You send it directly to our verified studio number (+91 98188 43996). We verify stock, provide instant payment options (UPI, GPay, PhonePe, Paytm, or NetBanking), and confirm your delivery details.
           </div>
         </details>
 
@@ -252,27 +413,17 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Yes! If you would like a specific color palette, metallic sheen, or custom painted detailing, simply reach out to us on WhatsApp before ordering and we will gladly personalize it for you.
+            Yes! If you would like a specific color palette, metallic sheen, or custom painted detailing, simply send us a note on WhatsApp before ordering and we will personalize it for you.
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question">
-            <span>How should I clean and care for my finished model?</span>
+            <span>How long does shipping take across India?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Our models are sealed with protective finishes. For routine dusting, simply wipe gently with a soft dry microfiber cloth or a soft-bristle brush. To preserve vibrant paint tones, keep models away from excessive direct heat and harsh outdoor sunlight.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-question">
-            <span>How long does shipping take?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-answer">
-            In-stock models ship within 24 to 48 hours. Custom requested finishes take 2-3 days for detailing and curing. Pan-India courier delivery typically takes 5-7 business days depending on your pin code.
+            In-stock models ship within 24 to 48 hours. Express courier delivery across metro cities typically takes 2-4 business days, and 4-6 business days for the rest of India. You receive a direct tracking link upon dispatch.
           </div>
         </details>
 
@@ -282,17 +433,17 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            We provide a 100% Transit Guarantee. Every piece is cushioned with multi-layer shock-absorbing wrapping and rigid cartons. In the rare event of damage, just share an unboxing photo/video on WhatsApp and we will dispatch a replacement immediately.
+            We offer an unconditional <strong>100% Transit Guarantee</strong>. Every piece is cushioned with heavy-duty multi-layer bubble wrap and rigid corrugated boxing. In the rare event of transit damage, just send an unboxing photo on WhatsApp and we will immediately dispatch a free replacement.
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question">
-            <span>Do you offer bulk/wholesale pricing?</span>
+            <span>Can I place corporate or customized bulk orders (50+ units)?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Yes! For bulk orders, corporate gifting, event merchandise, architectural models, or board game component manufacturing, contact us via WhatsApp at <a href="https://wa.me/919818843996?text=Hi%20Node%20'n'%20Nozzle!%20I%20would%20like%20to%20place%20a%20bulk%20order." target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:600;">+91 98188 43996</a> for tiered wholesale volume pricing.
+            Yes! For corporate gifting, conference giveaways, custom branding, or architectural components, reach out to us directly on WhatsApp at <a href="https://wa.me/919818843996?text=Hi%20Node%20'n'%20Nozzle!%20I%20would%20like%20to%20discuss%20a%2050%2B%20corporate%20bulk%20order." target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:600;">+91 98188 43996</a> for custom tailored volume estimates.
           </div>
         </details>
       </div>
@@ -311,35 +462,43 @@
             <span class="logo-cube" aria-hidden="true">
               <img src="assets/images/logo-icon.svg" alt="Node 'n' Nozzle" width="26" height="26">
             </span>
-            <span>NODE 'N' NOZZLE</span>
+            <span class="logo-text">NODE 'N' NOZZLE</span>
           </a>
-          <p>Precision models, crafted for you. Bespoke display models, tactile collectibles, home accents, and cosplay gear finished to perfection.</p>
+          <p>Precision handcrafted models, tactile kinetic fidgets, collectible figurines, and statement decor crafted with passion in India.</p>
+          <div class="footer-trust-badges">
+            <span class="badge-item">🛡️ 100% Transit Safe</span>
+            <span class="badge-item">🇮🇳 Pan-India Express</span>
+            <span class="badge-item">⚡ 10-20% Bulk Off</span>
+          </div>
         </div>
 
         <!-- Col 2: Quick Links -->
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h4>Navigation</h4>
           <div class="footer-links">
-            <a href="#shop">Shop Catalog</a>
+            <a href="#shop">Shop All Models</a>
+            <a href="#bulk-discount">Bulk Pricing (10% & 20% Off)</a>
             <a href="#about">About Our Studio</a>
             <a href="#faq">Frequently Asked Questions</a>
-            <a href="https://wa.me/919818843996?text=Hi%20Node%20'n'%20Nozzle!%20I%20would%20like%20to%20discuss%20a%20bulk%20order." target="_blank" rel="noopener noreferrer">Bulk & Custom Orders</a>
           </div>
         </div>
 
-        <!-- Col 3: Connect -->
+        <!-- Col 3: Connect & Orders -->
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h4>Orders & Contact</h4>
           <div class="footer-links">
-            <a href="https://wa.me/919818843996" target="_blank" rel="noopener noreferrer">WhatsApp (+91 98188 43996)</a>
-            <a href="tel:+919818843996">Call (+91 98188 43996)</a>
-            <a href="mailto:hello@nodennuzzle.in">Email: hello@nodennuzzle.in</a>
+            <a href="https://wa.me/919818843996" target="_blank" rel="noopener noreferrer" class="footer-wa-link">
+              <strong>WhatsApp:</strong> +91 98188 43996
+            </a>
+            <a href="tel:+919818843996"><strong>Phone:</strong> +91 98188 43996</a>
+            <a href="mailto:hello@nodennuzzle.in"><strong>Email:</strong> hello@nodennuzzle.in</a>
+            <span class="footer-hours">🕒 Mon &ndash; Sat: 9:00 AM &ndash; 8:00 PM IST</span>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Node 'n' Nozzle. All rights reserved.</p>
+        <p>&copy; 2026 Node 'n' Nozzle. Handcrafted with precision. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -349,22 +508,34 @@
        ====================================================================== -->
   <aside id="cartDrawer" class="cart-drawer" aria-label="Shopping Cart Drawer" aria-hidden="true">
     <div class="cart-header">
-      <h3>Your Cart</h3>
+      <div class="cart-header-title">
+        <h3>Shopping Cart</h3>
+        <span class="cart-header-sub">Pan-India Express Shipping</span>
+      </div>
       <button id="cartCloseBtn" class="cart-close" aria-label="Close cart">&times;</button>
     </div>
 
+    <!-- Free shipping ticker -->
+    <div class="cart-free-shipping">
+      <span class="free-shipping-icon">🚚</span>
+      <span class="free-shipping-text">Free Pan-India Delivery on orders over ₹999</span>
+    </div>
+
     <div id="cartItems" class="cart-body">
-      <!-- Populated by JS -->
+      <!-- Populated dynamically by cart.js -->
     </div>
 
     <div class="cart-footer">
       <div class="cart-summary">
-        <span class="cart-summary-label">Estimated Total:</span>
-        <span id="cartTotal" class="cart-total-amount">₹0</span>
+        <!-- Populated dynamically by cart.js with bulk discount breakdown -->
       </div>
       <a id="cartCheckoutBtn" href="#" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.044.072.044.419-.1.824z"/></svg>
         Order via WhatsApp
       </a>
+      <div class="cart-guarantee">
+        <span>🔒 Fast & Secure Direct Checkout &bull; 100% Transit Guarantee</span>
+      </div>
     </div>
   </aside>
 
@@ -390,6 +561,16 @@
        11. Toast Notification Container
        ====================================================================== -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ======================================================================
+       12. Floating Quick Cart Button (Mobile & Desktop scroll)
+       ====================================================================== -->
+  <button id="floatingCartBtn" class="floating-cart" aria-label="View Cart" title="View Cart">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>
+    <span class="floating-cart-badge" id="floatingCartBadge">0</span>
+  </button>
 
   <!-- Main Application Script (ES Module) -->
   <script type="module" src="js/app.js"></script>

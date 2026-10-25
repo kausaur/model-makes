@@ -3,7 +3,7 @@
  * Loads products from JSON, handles filtering, dynamic card rendering, inline gallery carousels, and lightbox integration.
  */
 
-import { addToCart, formatCurrency, getCart } from './cart.js';
+import { addToCart, updateQty, formatCurrency, getCart } from './cart.js';
 import { openLightbox } from './lightbox.js';
 
 let cachedProducts = [];
@@ -42,7 +42,7 @@ export function renderProducts(products = cachedProducts, filter = 'all') {
   if (filtered.length === 0) {
     grid.innerHTML = `
       <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-secondary);">
-        <p style="font-size: 1.2rem;">No 3D models found in this category.</p>
+        <p style="font-size: 1.2rem;">No models found in this category.</p>
         <button class="btn btn-outline" style="margin-top: 1rem;" onclick="document.querySelector('[data-filter=all]')?.click()">View All Models</button>
       </div>
     `;
@@ -100,9 +100,9 @@ export function renderProducts(products = cachedProducts, filter = 'all') {
       // Product details (finish, size, weight)
       const specsHtml = `
         <div class="card-specs">
-          ${product.finish ? `<span class="spec">${product.finish}</span>` : ''}
-          ${product.dimensions ? `<span class="spec">${product.dimensions}</span>` : ''}
-          ${product.weight ? `<span class="spec">${product.weight}</span>` : ''}
+          ${product.finish ? `<span class="spec" title="Finish">${product.finish}</span>` : ''}
+          ${product.dimensions ? `<span class="spec" title="Dimensions">${product.dimensions}</span>` : ''}
+          ${product.weight ? `<span class="spec" title="Weight">${product.weight}</span>` : ''}
         </div>
       `;
 
@@ -122,10 +122,16 @@ export function renderProducts(products = cachedProducts, filter = 'all') {
             <div class="card-tags">
               ${isNew ? '<span class="badge badge-new">New</span>' : ''}
               ${isBestseller ? '<span class="badge badge-bestseller">Bestseller</span>' : ''}
+              <span class="badge badge-bulk" title="10+ items get 10% off, 20+ get 20% off">Bulk 10-20% Off</span>
             </div>
-            <button class="media-expand" aria-label="View media" title="View larger">&#x26F6;</button>
+            <button class="media-expand" aria-label="View media" title="Zoom In">&#x26F6;</button>
           </div>
           <div class="card-body">
+            <div class="card-rating">
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-val">4.9</span>
+              <span class="rating-badge">Verified</span>
+            </div>
             <h3 class="card-title">${product.name}</h3>
             <p class="card-desc">${product.description}</p>
             ${specsHtml}
@@ -135,9 +141,20 @@ export function renderProducts(products = cachedProducts, filter = 'all') {
                 ${hasDiscount ? `<span class="mrp"><s>${formatCurrency(product.mrp)}</s></span>` : ''}
                 ${hasDiscount ? `<span class="discount">-${discountPct}%</span>` : ''}
               </div>
-              <button class="btn btn-add" data-id="${product.id}">
-                ${cartItem ? `In Cart (${cartItem.qty})` : 'Add to Cart'}
-              </button>
+              <div class="card-action-wrap" data-id="${product.id}">
+                ${cartItem ? `
+                  <div class="card-stepper" data-id="${product.id}">
+                    <button class="stepper-btn card-dec" data-id="${product.id}" aria-label="Decrease quantity">&minus;</button>
+                    <span class="stepper-val">${cartItem.qty}</span>
+                    <button class="stepper-btn card-inc" data-id="${product.id}" aria-label="Increase quantity">&plus;</button>
+                  </div>
+                ` : `
+                  <button class="btn btn-add" data-id="${product.id}">
+                    <svg class="btn-cart-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    Add
+                  </button>
+                `}
+              </div>
             </div>
           </div>
         </article>
@@ -224,14 +241,37 @@ function attachCardEvents(products) {
         openLightbox(mediaItems, currentSlide);
       });
     }
+  });
 
-    // Add to Cart button
-    const addBtn = card.querySelector('.btn-add');
-    if (addBtn) {
-      addBtn.addEventListener('click', () => {
-        addToCart(product);
-      });
-    }
+  bindCardActionButtons(products);
+}
+
+/**
+ * Binds Add to Cart and Stepper (+/-) buttons.
+ * @param {Array} products
+ */
+function bindCardActionButtons(products) {
+  document.querySelectorAll('.btn-add').forEach((btn) => {
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      const pid = btn.dataset.id;
+      const product = products.find((p) => p.id === pid);
+      if (product) addToCart(product);
+    };
+  });
+
+  document.querySelectorAll('.card-inc').forEach((btn) => {
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      updateQty(btn.dataset.id, 1);
+    };
+  });
+
+  document.querySelectorAll('.card-dec').forEach((btn) => {
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      updateQty(btn.dataset.id, -1);
+    };
   });
 }
 
@@ -252,19 +292,32 @@ export function initFilters(products = cachedProducts) {
     });
   });
 
-  // Re-render button labels when cart updates
+  // Re-render button actions when cart updates
   window.addEventListener('cart-updated', () => {
-    const activeTab = document.querySelector('.filter-tabs .filter-btn.active');
-    const currentFilter = activeTab ? activeTab.dataset.filter : 'all';
     const currentCart = getCart();
 
-    document.querySelectorAll('.product-card').forEach((card) => {
-      const pid = card.dataset.id;
-      const btn = card.querySelector('.btn-add');
-      if (btn) {
-        const item = currentCart.find((i) => i.id === pid);
-        btn.textContent = item ? `In Cart (${item.qty})` : 'Add to Cart';
+    document.querySelectorAll('.card-action-wrap').forEach((wrap) => {
+      const pid = wrap.dataset.id;
+      const cartItem = currentCart.find((i) => i.id === pid);
+
+      if (cartItem) {
+        wrap.innerHTML = `
+          <div class="card-stepper" data-id="${pid}">
+            <button class="stepper-btn card-dec" data-id="${pid}" aria-label="Decrease quantity">&minus;</button>
+            <span class="stepper-val">${cartItem.qty}</span>
+            <button class="stepper-btn card-inc" data-id="${pid}" aria-label="Increase quantity">&plus;</button>
+          </div>
+        `;
+      } else {
+        wrap.innerHTML = `
+          <button class="btn btn-add" data-id="${pid}">
+            <svg class="btn-cart-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            Add
+          </button>
+        `;
       }
     });
+
+    bindCardActionButtons(products);
   });
 }
