@@ -61,14 +61,13 @@
     "id": "kinetic-cube",
     "name": "Rounded Infinity Fidget Cube",
     "category": "gadgets",
-    "description": "Austin Vojta classic 8-block infinity folding fidget cube featuring soft rounded chamfered corners and precision interlocking hinges. Folds continuously in all directions with whisper-quiet tactile action.",
+    "description": "Austin Vojta's renowned 8-block infinity folding fidget cube featuring soft rounded chamfered corners and interlocking precision hinges. Printed in dual-tone silk brass gold and forest green, it cycles smoothly between cube and flat rectangular shapes with quiet, satisfying tactile movement.",
     "price": 120,
     "mrp": 180,
     "currency": "INR",
     "images": [
-      "assets/images/kinetic-cube-1.jpg",
-      "assets/images/fidget-cube-cropped-1.jpg",
-      "assets/images/fidget-cube-cropped-2.jpg"
+      "assets/images/fidget-cube-1.jpg",
+      "assets/images/fidget-cube-2.jpg"
     ],
     "video": null,
     "gif": null,
@@ -78,14 +77,14 @@
       "cube",
       "kinetic"
     ],
-    "finish": "Silk Gold & Deep Green Dual-Tone",
-    "dimensions": "5 × 5 × 5 cm",
+    "finish": "Silk Brass Gold & Forest Green Dual-Tone",
+    "dimensions": "5 × 5 × 5 cm (Folds to 8 × 4 × 2 cm)",
     "weight": "27g",
-    "features": "Continuous 360° Folding Action",
+    "features": "Dual-State Continuous 360° Inversion",
     "inStock": true,
     "featured": false,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T12:00:00Z"
+    "updatedAt": "2026-02-15T15:00:00Z"
   },
   {
     "id": "shadow-blade-sword",
