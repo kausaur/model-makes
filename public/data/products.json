@@ -12,7 +12,12 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["bestseller", "dragon", "mythical", "detailed"],
+    "tags": [
+      "bestseller",
+      "dragon",
+      "mythical",
+      "detailed"
+    ],
     "finish": "Hand-Detailed Satin",
     "dimensions": "15 × 8 × 10 cm",
     "weight": "185g",
@@ -35,7 +40,12 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["new", "fidget", "articulated", "tactile"],
+    "tags": [
+      "new",
+      "fidget",
+      "articulated",
+      "tactile"
+    ],
     "finish": "Silky Dual-Tone Sheen",
     "dimensions": "12 × 12 × 5 cm",
     "weight": "110g",
@@ -58,7 +68,12 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["bestseller", "desk", "dock", "ergonomic"],
+    "tags": [
+      "bestseller",
+      "desk",
+      "dock",
+      "ergonomic"
+    ],
     "finish": "Matte Anti-Scratch",
     "dimensions": "9 × 7 × 10 cm",
     "weight": "95g",
@@ -81,7 +96,11 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["desk", "minimalist", "clean-setup"],
+    "tags": [
+      "desk",
+      "minimalist",
+      "clean-setup"
+    ],
     "finish": "Velvet Matte Finish",
     "dimensions": "8 × 4 × 3 cm",
     "weight": "70g",
@@ -104,7 +123,12 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["decor", "planter", "interior", "minimal"],
+    "tags": [
+      "decor",
+      "planter",
+      "interior",
+      "minimal"
+    ],
     "finish": "Textured Stone White",
     "dimensions": "11 × 11 × 10 cm",
     "weight": "160g",
@@ -127,7 +151,12 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["new", "lamp", "ambient", "nightlight"],
+    "tags": [
+      "new",
+      "lamp",
+      "ambient",
+      "nightlight"
+    ],
     "finish": "Translucent Ivory Glow",
     "dimensions": "14 cm Diameter",
     "weight": "210g",
@@ -150,7 +179,12 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["bestseller", "cosplay", "wearable", "hero"],
+    "tags": [
+      "bestseller",
+      "cosplay",
+      "wearable",
+      "hero"
+    ],
     "finish": "Metallic Lacquer & Gold",
     "dimensions": "30 × 22 × 26 cm (1:1 Scale)",
     "weight": "680g",
@@ -173,7 +207,12 @@
     ],
     "video": null,
     "gif": null,
-    "tags": ["new", "cosplay", "bust", "collector"],
+    "tags": [
+      "new",
+      "cosplay",
+      "bust",
+      "collector"
+    ],
     "finish": "Weathered Gunmetal Chrome",
     "dimensions": "20 × 12 × 14 cm",
     "weight": "420g",
@@ -182,5 +221,258 @@
     "featured": false,
     "createdAt": "2026-02-08T16:45:00Z",
     "updatedAt": "2026-02-08T16:45:00Z"
+  },
+  {
+    "id": "air-pressure-tank",
+    "name": "Pneumatic Desktop Air Tank",
+    "category": "gadgets",
+    "description": "Precision dual-chamber pneumatic desktop accessory featuring industrial brass relief valves, knurled pressure regulators, and an emerald satin finish. Smooth kinetic operation for tactile desk display.",
+    "price": 550,
+    "mrp": 750,
+    "currency": "INR",
+    "images": [
+      "assets/images/air-tank-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "bestseller",
+      "kinetic",
+      "desk",
+      "mechanical"
+    ],
+    "finish": "Industrial Emerald Satin",
+    "dimensions": "16 × 9 × 9 cm",
+    "weight": "176g",
+    "features": "Dual-Chamber Kinetic Design",
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "flarewing-dragon",
+    "name": "Flarewing Articulated Silk Dragon",
+    "category": "figurines",
+    "description": "Celestial articulated dragon featuring fluid multi-segmented vertebrae and interlocking flappy wings. Finished in shimmering silk imperial gold with radiant light play, fully poseable for shelf or desk display.",
+    "price": 300,
+    "mrp": 450,
+    "currency": "INR",
+    "images": [
+      "assets/images/flarewing-dragon-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "bestseller",
+      "articulated",
+      "dragon",
+      "silk-gold"
+    ],
+    "finish": "Silk Imperial Gold",
+    "dimensions": "22 × 12 × 4 cm",
+    "weight": "50g",
+    "features": "Flapping Wing Articulation",
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "kinetic-cube",
+    "name": "Geometric Kinetic Desk Cube",
+    "category": "gadgets",
+    "description": "Seamless interlocking infinity kinetic cube engineered for single-handed folding and tactile stress relief. Features concealed precision hinges and smooth chamfered edges in a serene matte sage green finish.",
+    "price": 120,
+    "mrp": 180,
+    "currency": "INR",
+    "images": [
+      "assets/images/kinetic-cube-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "new",
+      "fidget",
+      "kinetic",
+      "desk-toy"
+    ],
+    "finish": "Matte Sage Green",
+    "dimensions": "5 × 5 × 5 cm",
+    "weight": "27g",
+    "features": "Continuous 360° Folding",
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "shadow-blade-sword",
+    "name": "Shadow Katana Display Prop",
+    "category": "cosplay",
+    "description": "Striking decorative prop sword with a textured diamond-wrap handle, minimalist geometric tsuba guard, and smooth blade profile. Ideal for gaming room desk displays, cosplay shoots, and wall mounts.",
+    "price": 450,
+    "mrp": 650,
+    "currency": "INR",
+    "images": [
+      "assets/images/shadow-sword-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "cosplay",
+      "blade",
+      "katana",
+      "prop"
+    ],
+    "finish": "Stealth Obsidian Matte",
+    "dimensions": "48 × 7 × 3 cm",
+    "weight": "118g",
+    "features": "Textured Grip Handle",
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "acoustic-skull-whistle",
+    "name": "Acoustic Skull Resonator Whistle",
+    "category": "gadgets",
+    "description": "Intricately sculpted anatomical skull whistle with concealed internal acoustic sound chambers that project a sharp, high-decibel tone. Finished in satin charcoal black with textured cranial detailing.",
+    "price": 120,
+    "mrp": 180,
+    "currency": "INR",
+    "images": [
+      "assets/images/skull-whistle-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "acoustic",
+      "skull",
+      "whistle",
+      "novelty"
+    ],
+    "finish": "Satin Charcoal Bone",
+    "dimensions": "5.5 × 4.2 × 4 cm",
+    "weight": "34g",
+    "features": "High-Decibel Dual Chamber",
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "pitch-pipe-tuner",
+    "name": "Acoustic Pitch Pipe Tuner",
+    "category": "gadgets",
+    "description": "Ultra-compact pocket acoustic pitch pipe crafted with clean internal airflow channels for pure reference tuning. Minimalist aerodynamic design finished in clean architectural matte chalk white.",
+    "price": 80,
+    "mrp": 120,
+    "currency": "INR",
+    "images": [
+      "assets/images/pitch-tuner-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "acoustic",
+      "tuner",
+      "minimalist",
+      "pocket"
+    ],
+    "finish": "Architectural Chalk White",
+    "dimensions": "6.2 × 3.2 × 2.2 cm",
+    "weight": "17g",
+    "features": "Precision Internal Resonator",
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "aero-spin-top",
+    "name": "Aero-Dynamic Precision Spin Top",
+    "category": "gadgets",
+    "description": "Engineered low-center-of-gravity spinning top featuring a diamond-knurled stem for a firm fingertip launch and an ultra-low-friction contact tip. Balanced for sustained, wobble-free spins.",
+    "price": 50,
+    "mrp": 80,
+    "currency": "INR",
+    "images": [
+      "assets/images/spin-top-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "fidget",
+      "spin-top",
+      "kinetic",
+      "executive"
+    ],
+    "finish": "Satin Emerald Green",
+    "dimensions": "3.6 × 3.6 × 4 cm",
+    "weight": "6g",
+    "features": "Low-Friction Pivot Tip",
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "toroidal-rotors",
+    "name": "Toroidal Aero-Flight Propeller Pair",
+    "category": "gadgets",
+    "description": "High-efficiency closed-loop toroidal propellers engineered for smooth, quiet airflow and enhanced lift stability. Set of two balanced aerodynamic rotors in contrasting Arctic White and Obsidian Black.",
+    "price": 150,
+    "mrp": 220,
+    "currency": "INR",
+    "images": [
+      "assets/images/toroidal-rotor-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "aerodynamic",
+      "propeller",
+      "drone",
+      "kinetic"
+    ],
+    "finish": "Dual Contrast Arctic/Obsidian",
+    "dimensions": "12 × 12 × 2.2 cm (Pair)",
+    "weight": "35g",
+    "features": "Closed-Loop Toroidal Wings",
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "ganesha-mini-idol",
+    "name": "Sacred Vignaharta Ganesha Mini Idol",
+    "category": "home-decor",
+    "description": "Delicately sculpted miniature Lord Ganesha idol with an ornate crown, peaceful countenance, and fine trunk contours. Sized for car dashboard placement, home mandir altars, and pocket blessings.",
+    "price": 99,
+    "mrp": 150,
+    "currency": "INR",
+    "images": [
+      "assets/images/ganesha-idol-1.jpg"
+    ],
+    "video": null,
+    "gif": null,
+    "tags": [
+      "bestseller",
+      "sacred",
+      "ganesha",
+      "dashboard",
+      "decor"
+    ],
+    "finish": "Pure Marble Satin White",
+    "dimensions": "4.5 × 3 × 2.4 cm",
+    "weight": "8g",
+    "features": "Car Dashboard / Altar Ready",
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-02-15T10:00:00Z",
+    "updatedAt": "2026-02-15T10:00:00Z"
   }
 ]
