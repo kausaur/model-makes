@@ -224,42 +224,44 @@
   },
   {
     "id": "air-pressure-tank",
-    "name": "Pneumatic Desktop Air Tank",
+    "name": "Pneumatic BB-Cannon Battle Tank V2",
     "category": "gadgets",
-    "description": "Precision dual-chamber pneumatic desktop accessory featuring industrial brass relief valves, knurled pressure regulators, and an emerald satin finish. Smooth kinetic operation for tactile desk display.",
+    "description": "Tactical miniature battle tank with functional continuous tracks, rotating turret, slide-out ammo magazine with spherical pellets, and an integrated pneumatic push plunger that fires projectiles.",
     "price": 550,
     "mrp": 750,
     "currency": "INR",
     "images": [
-      "assets/images/air-tank-1.jpg"
+      "assets/images/air-tank-1.jpg",
+      "assets/images/air-tank-cropped.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
       "bestseller",
-      "kinetic",
-      "desk",
-      "mechanical"
+      "tank",
+      "pneumatic",
+      "kinetic"
     ],
-    "finish": "Industrial Emerald Satin",
-    "dimensions": "16 × 9 × 9 cm",
+    "finish": "Matte Olive Drab Green",
+    "dimensions": "14 × 11 × 9 cm",
     "weight": "176g",
-    "features": "Dual-Chamber Kinetic Design",
+    "features": "Pneumatic Cannon & Working Treads",
     "inStock": true,
     "featured": true,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "flarewing-dragon",
-    "name": "Flarewing Articulated Silk Dragon",
+    "name": "Flarewing Flappy Articulated Dragon",
     "category": "figurines",
-    "description": "Celestial articulated dragon featuring fluid multi-segmented vertebrae and interlocking flappy wings. Finished in shimmering silk imperial gold with radiant light play, fully poseable for shelf or desk display.",
+    "description": "Poseable print-in-place articulated wyvern dragon with fluid multi-segmented vertebrae and mechanical flapping wings. Finished in shimmering silk antique gold and dark bronze.",
     "price": 300,
     "mrp": 450,
     "currency": "INR",
     "images": [
-      "assets/images/flarewing-dragon-1.jpg"
+      "assets/images/flarewing-dragon-1.jpg",
+      "assets/images/flarewing-dragon-cropped.jpg"
     ],
     "video": null,
     "gif": null,
@@ -269,210 +271,212 @@
       "dragon",
       "silk-gold"
     ],
-    "finish": "Silk Imperial Gold",
-    "dimensions": "22 × 12 × 4 cm",
+    "finish": "Silk Antique Gold & Black Shimmer",
+    "dimensions": "20 × 12 × 5 cm",
     "weight": "50g",
-    "features": "Flapping Wing Articulation",
+    "features": "Mechanical Flapping Wings",
     "inStock": true,
     "featured": true,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "kinetic-cube",
-    "name": "Geometric Kinetic Desk Cube",
+    "name": "Rounded Infinity Fidget Cube",
     "category": "gadgets",
-    "description": "Seamless interlocking infinity kinetic cube engineered for single-handed folding and tactile stress relief. Features concealed precision hinges and smooth chamfered edges in a serene matte sage green finish.",
+    "description": "Austin Vojta classic 8-block infinity folding fidget cube featuring soft rounded chamfered corners and precision interlocking hinges. Folds continuously in all directions with whisper-quiet tactile action.",
     "price": 120,
     "mrp": 180,
     "currency": "INR",
     "images": [
-      "assets/images/kinetic-cube-1.jpg"
+      "assets/images/kinetic-cube-1.jpg",
+      "assets/images/fidget-cube-cropped-1.jpg",
+      "assets/images/fidget-cube-cropped-2.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
       "new",
       "fidget",
-      "kinetic",
-      "desk-toy"
+      "cube",
+      "kinetic"
     ],
-    "finish": "Matte Sage Green",
+    "finish": "Silk Gold & Deep Green Dual-Tone",
     "dimensions": "5 × 5 × 5 cm",
     "weight": "27g",
-    "features": "Continuous 360° Folding",
+    "features": "Continuous 360° Folding Action",
     "inStock": true,
     "featured": false,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "shadow-blade-sword",
-    "name": "Shadow Katana Display Prop",
+    "name": "Telescoping Collapsible Katana Sword",
     "category": "cosplay",
-    "description": "Striking decorative prop sword with a textured diamond-wrap handle, minimalist geometric tsuba guard, and smooth blade profile. Ideal for gaming room desk displays, cosplay shoots, and wall mounts.",
+    "description": "Full telescoping print-in-place collapsible katana sword. Extends smoothly with a flick of the wrist and retracts into the hilt. Features a curved blade, oval cutout tsuba handguard, and textured tsuka wrap.",
     "price": 450,
     "mrp": 650,
     "currency": "INR",
     "images": [
-      "assets/images/shadow-sword-1.jpg"
+      "assets/images/katana-sword-cropped-1.jpg",
+      "assets/images/katana-sword-cropped-2.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
       "cosplay",
-      "blade",
       "katana",
+      "collapsible",
       "prop"
     ],
-    "finish": "Stealth Obsidian Matte",
-    "dimensions": "48 × 7 × 3 cm",
+    "finish": "Silk Antique Gold & Obsidian",
+    "dimensions": "Extends to ~75 cm (Collapsed 22 cm)",
     "weight": "118g",
-    "features": "Textured Grip Handle",
+    "features": "Flick-To-Extend Telescoping Action",
     "inStock": true,
     "featured": false,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "acoustic-skull-whistle",
-    "name": "Acoustic Skull Resonator Whistle",
+    "name": "Aztec Screaming Death Skull Whistle",
     "category": "gadgets",
-    "description": "Intricately sculpted anatomical skull whistle with concealed internal acoustic sound chambers that project a sharp, high-decibel tone. Finished in satin charcoal black with textured cranial detailing.",
+    "description": "Authentic acoustic screaming death whistle shaped like a human skull with rear mouthpiece. Internal vortex chamber creates a high-decibel human-like scream when blown.",
     "price": 120,
     "mrp": 180,
     "currency": "INR",
     "images": [
-      "assets/images/skull-whistle-1.jpg"
+      "assets/images/skull-whistle-cropped.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
       "acoustic",
       "skull",
-      "whistle",
+      "death-whistle",
       "novelty"
     ],
-    "finish": "Satin Charcoal Bone",
-    "dimensions": "5.5 × 4.2 × 4 cm",
+    "finish": "Matte Midnight Obsidian",
+    "dimensions": "6 × 4.5 × 4 cm",
     "weight": "34g",
-    "features": "High-Decibel Dual Chamber",
+    "features": "Acoustic Screaming Vortex Chamber",
     "inStock": true,
     "featured": false,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "pitch-pipe-tuner",
-    "name": "Acoustic Pitch Pipe Tuner",
+    "name": "Musical Fidget Acoustic Melody Comb",
     "category": "gadgets",
-    "description": "Ultra-compact pocket acoustic pitch pipe crafted with clean internal airflow channels for pure reference tuning. Minimalist aerodynamic design finished in clean architectural matte chalk white.",
+    "description": "Pocket-sized acoustic music fidget comb. Strumming your thumb across the precision-tuned vibrating tines plays the Happy Birthday melody. Satisfying tactile and acoustic fidget toy.",
     "price": 80,
     "mrp": 120,
     "currency": "INR",
     "images": [
-      "assets/images/pitch-tuner-1.jpg"
+      "assets/images/musical-fidget-cropped.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
       "acoustic",
-      "tuner",
-      "minimalist",
-      "pocket"
+      "music",
+      "happy-birthday",
+      "fidget"
     ],
-    "finish": "Architectural Chalk White",
-    "dimensions": "6.2 × 3.2 × 2.2 cm",
+    "finish": "Clean Matte Chalk White",
+    "dimensions": "7.5 × 3.5 × 0.8 cm",
     "weight": "17g",
-    "features": "Precision Internal Resonator",
+    "features": "Plays Happy Birthday On Strum",
     "inStock": true,
     "featured": false,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "aero-spin-top",
-    "name": "Aero-Dynamic Precision Spin Top",
+    "name": "Vortex Aerodynamic 6g Spinning Top",
     "category": "gadgets",
-    "description": "Engineered low-center-of-gravity spinning top featuring a diamond-knurled stem for a firm fingertip launch and an ultra-low-friction contact tip. Balanced for sustained, wobble-free spins.",
+    "description": "Ultra-lightweight 6-gram precision spinning top featuring curved aerodynamic spiral vortex fins on the perimeter for prolonged gyroscopic balance and sustained spins.",
     "price": 50,
     "mrp": 80,
     "currency": "INR",
     "images": [
-      "assets/images/spin-top-1.jpg"
+      "assets/images/vortex-top-cropped.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
       "fidget",
       "spin-top",
-      "kinetic",
-      "executive"
+      "vortex",
+      "kinetic"
     ],
-    "finish": "Satin Emerald Green",
-    "dimensions": "3.6 × 3.6 × 4 cm",
+    "finish": "Matte Olive Green",
+    "dimensions": "3.8 × 3.8 × 4.2 cm",
     "weight": "6g",
-    "features": "Low-Friction Pivot Tip",
+    "features": "Aerodynamic Spiral Vortex Fins",
     "inStock": true,
     "featured": false,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "toroidal-rotors",
-    "name": "Toroidal Aero-Flight Propeller Pair",
+    "name": "Toroidal Flying Rotor Launcher Toy Set",
     "category": "gadgets",
-    "description": "High-efficiency closed-loop toroidal propellers engineered for smooth, quiet airflow and enhanced lift stability. Set of two balanced aerodynamic rotors in contrasting Arctic White and Obsidian Black.",
+    "description": "Complete aerodynamic launcher set featuring a 3-ring circular toroidal closed-loop propeller, ergonomic launch handle, and toothed pull-cord rip strip. Launches high into the air with smooth, quiet toroidal lift.",
     "price": 150,
     "mrp": 220,
     "currency": "INR",
     "images": [
-      "assets/images/toroidal-rotor-1.jpg"
+      "assets/images/toroidal-rotor-cropped.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
       "aerodynamic",
-      "propeller",
-      "drone",
-      "kinetic"
+      "flying-toy",
+      "rotor",
+      "launcher"
     ],
-    "finish": "Dual Contrast Arctic/Obsidian",
-    "dimensions": "12 × 12 × 2.2 cm (Pair)",
+    "finish": "Multi-Color Silk / White Handle",
+    "dimensions": "13 cm Diameter (Propeller)",
     "weight": "35g",
-    "features": "Closed-Loop Toroidal Wings",
+    "features": "Includes Launcher Handle & Rip Cord",
     "inStock": true,
     "featured": false,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   },
   {
     "id": "ganesha-mini-idol",
-    "name": "Sacred Vignaharta Ganesha Mini Idol",
+    "name": "Sacred Ganesha Pocket Relief Medallion",
     "category": "home-decor",
-    "description": "Delicately sculpted miniature Lord Ganesha idol with an ornate crown, peaceful countenance, and fine trunk contours. Sized for car dashboard placement, home mandir altars, and pocket blessings.",
+    "description": "Coin-sized pocket blessing token featuring an intricate raised bas-relief carving of Lord Ganesha within a beaded ornamental border. Sized for carrying in a wallet, placing on a car dashboard, or keeping at a puja altar.",
     "price": 99,
     "mrp": 150,
     "currency": "INR",
     "images": [
-      "assets/images/ganesha-idol-1.jpg"
+      "assets/images/ganesha-relief-1.jpg"
     ],
     "video": null,
     "gif": null,
     "tags": [
-      "bestseller",
       "sacred",
       "ganesha",
-      "dashboard",
+      "coin-relief",
       "decor"
     ],
-    "finish": "Pure Marble Satin White",
-    "dimensions": "4.5 × 3 × 2.4 cm",
+    "finish": "Satin Marble White",
+    "dimensions": "4 × 4 × 0.4 cm (Pocket Coin Size)",
     "weight": "8g",
-    "features": "Car Dashboard / Altar Ready",
+    "features": "Coin-Sized Pocket Blessing Token",
     "inStock": true,
     "featured": true,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T10:00:00Z"
+    "updatedAt": "2026-02-15T12:00:00Z"
   }
 ]
