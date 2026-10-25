@@ -8,8 +8,7 @@
     "mrp": 750,
     "currency": "INR",
     "images": [
-      "assets/images/air-tank-1.jpg",
-      "assets/images/air-tank-cropped.jpg"
+      "assets/images/air-tank-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -26,7 +25,7 @@
     "inStock": true,
     "featured": true,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T12:00:00Z"
+    "updatedAt": "2026-02-15T16:00:00Z"
   },
   {
     "id": "flarewing-dragon",
