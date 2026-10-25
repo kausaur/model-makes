@@ -37,7 +37,8 @@
     "mrp": 450,
     "currency": "INR",
     "images": [
-      "assets/images/flarewing-dragon-1.jpg"
+      "assets/images/flarewing-dragon-1.jpg",
+      "assets/images/flarewing-dragon-full.jpg"
     ],
     "video": null,
     "gif": null,
