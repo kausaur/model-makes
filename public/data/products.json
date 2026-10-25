@@ -8,7 +8,8 @@
     "mrp": 750,
     "currency": "INR",
     "images": [
-      "assets/images/air-tank-1.jpg"
+      "assets/images/air-tank-1.jpg",
+      "assets/images/air-tank-full.jpg"
     ],
     "video": null,
     "gif": null,
