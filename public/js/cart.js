@@ -4,7 +4,7 @@
  */
 
 const CART_KEY = 'mm-cart';
-const WHATSAPP_NUMBER = '919999999999';
+const WHATSAPP_NUMBER = '919818843996';
 
 /**
  * Retrieves the current cart array from localStorage.
