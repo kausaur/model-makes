@@ -182,7 +182,8 @@
     "mrp": 80,
     "currency": "INR",
     "images": [
-      "assets/images/vortex-top-cropped.jpg"
+      "assets/images/vortex-top-cropped.jpg",
+      "assets/images/vortex-top-full.jpg"
     ],
     "video": null,
     "gif": null,
