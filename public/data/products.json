@@ -211,7 +211,8 @@
     "mrp": 220,
     "currency": "INR",
     "images": [
-      "assets/images/toroidal-rotor-cropped.jpg"
+      "assets/images/toroidal-rotor-cropped.jpg",
+      "assets/images/toroidal-rotor-full.jpg"
     ],
     "video": null,
     "gif": null,
