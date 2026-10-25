@@ -232,11 +232,12 @@
     "id": "ganesha-mini-idol",
     "name": "Sacred Ganesha Pocket Relief Medallion",
     "category": "home-decor",
-    "description": "Coin-sized pocket blessing token featuring an intricate raised bas-relief carving of Lord Ganesha within a beaded ornamental border. Sized for carrying in a wallet, placing on a car dashboard, or keeping at a puja altar.",
+    "description": "Sacred coin-sized circular bas-relief medallion of Lord Ganesha seated in padmasana upon a blooming lotus flower, surrounded by sacred lotus buds and intricate ornamental wave scrollwork. Sized as an auspicious pocket token or car dashboard blessing.",
     "price": 99,
     "mrp": 150,
     "currency": "INR",
     "images": [
+      "assets/images/ganesha-relief-white.jpg",
       "assets/images/ganesha-relief-1.jpg"
     ],
     "video": null,
@@ -247,13 +248,13 @@
       "coin-relief",
       "decor"
     ],
-    "finish": "Satin Marble White",
-    "dimensions": "4 × 4 × 0.4 cm (Pocket Coin Size)",
+    "finish": "Satin White Marble PLA & Terracotta Sandstone",
+    "dimensions": "4 × 4 × 0.4 cm (Coin Sized)",
     "weight": "8g",
-    "features": "Coin-Sized Pocket Blessing Token",
+    "features": "High-Detail Circular Lotus Relief",
     "inStock": true,
     "featured": true,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T12:00:00Z"
+    "updatedAt": "2026-02-15T14:00:00Z"
   }
 ]
