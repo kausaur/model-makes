@@ -37,8 +37,7 @@
     "mrp": 450,
     "currency": "INR",
     "images": [
-      "assets/images/flarewing-dragon-1.jpg",
-      "assets/images/flarewing-dragon-cropped.jpg"
+      "assets/images/flarewing-dragon-1.jpg"
     ],
     "video": null,
     "gif": null,
@@ -55,7 +54,7 @@
     "inStock": true,
     "featured": true,
     "createdAt": "2026-02-15T10:00:00Z",
-    "updatedAt": "2026-02-15T12:00:00Z"
+    "updatedAt": "2026-02-15T15:30:00Z"
   },
   {
     "id": "kinetic-cube",
