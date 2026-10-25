@@ -124,7 +124,8 @@
     "mrp": 180,
     "currency": "INR",
     "images": [
-      "assets/images/skull-whistle-cropped.jpg"
+      "assets/images/skull-whistle-cropped.jpg",
+      "assets/images/skull-whistle-full.jpg"
     ],
     "video": null,
     "gif": null,
